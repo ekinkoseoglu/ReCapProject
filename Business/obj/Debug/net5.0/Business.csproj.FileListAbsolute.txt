@@ -1,0 +1,17 @@
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\Business.deps.json
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\Business.dll
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\ref\Business.dll
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\Business.pdb
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\DataAccess.dll
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\Entities.dll
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\Entities.pdb
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.csprojAssemblyReference.cache
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.AssemblyInfoInputs.cache
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.AssemblyInfo.cs
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.csproj.CopyComplete
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.dll
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\ref\Business.dll
+C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.pdb

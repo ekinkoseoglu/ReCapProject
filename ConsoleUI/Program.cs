@@ -38,12 +38,20 @@ namespace ConsoleUI
 
             Car carornek = new Car()
             {
-                ColorId = 2,Details = "degisti",DailyPrice = 45000,ModelYear = "2013",BrandId = 2,CarId = 2
+                ColorId = 2,Details = "Yeni Araba",DailyPrice = 45000,ModelYear = "2013",BrandId = 2
             };
-            efCarDal.Update(carornek);
+            //efCarDal.Update(carornek);
+            //foreach (var x in efCarManager.GetAll())
+            //{
+            //    Console.WriteLine(x.Details+" "+x.CarId);
+                
+            //}
+
+            Console.WriteLine("---------");
+            efCarManager.Delete(1011);
             foreach (var x in efCarManager.GetAll())
             {
-                Console.WriteLine(x.Details+" "+x.CarId);
+                Console.WriteLine(x.Details + " " + x.CarId);
             }
         }
     }

@@ -1,5 +1,14 @@
 {
-  "ExpandedNodes": [],
-  "SelectedNode": "\\ReCapProject.sln",
+  "ExpandedNodes": [
+    "",
+    "\\Business",
+    "\\Business\\bin",
+    "\\Business\\obj",
+    "\\Business\\obj\\Release",
+    "\\ConsoleUI",
+    "\\DataAccess",
+    "\\Entities"
+  ],
+  "SelectedNode": "\\Business\\obj",
   "PreviewInSolutionExplorer": false
 }

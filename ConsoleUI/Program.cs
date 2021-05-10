@@ -36,19 +36,20 @@ namespace ConsoleUI
             EfCarDal efCarDal = new EfCarDal();
             CarManager efCarManager = new CarManager(efCarDal);
 
-            Car carornek = new Car()
+            Car carornek3 = new Car()
             {
-                ColorId = 2,Details = "Yeni Araba",DailyPrice = 45000,ModelYear = "2013",BrandId = 2
+                ColorId = 2,Details = "Volkswagen Jetta", DailyPrice = 20000,ModelYear = "2019",BrandId = 2,CarId = 2008
             };
             //efCarDal.Update(carornek);
             //foreach (var x in efCarManager.GetAll())
             //{
             //    Console.WriteLine(x.Details+" "+x.CarId);
-                
+            
             //}
 
             Console.WriteLine("---------");
-            efCarManager.Delete(1011); // It deletes the car for Carid Number
+            efCarManager.Update(carornek3);
+            //efCarManager.Delete(1011); // It deletes the car for Carid Number
             foreach (var x in efCarManager.GetAll())
             {
                 Console.WriteLine(x.Details + " " + x.CarId);

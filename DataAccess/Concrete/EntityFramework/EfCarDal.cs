@@ -54,8 +54,12 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (RentingCarDBContext context = new RentingCarDBContext())
             {
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
+                var updatedEntity = context.Cars.SingleOrDefault(p => p.CarId == entity.CarId);
+                updatedEntity.Details = entity.Details;
+                updatedEntity.BrandId = entity.BrandId;
+                updatedEntity.ColorId = entity.ColorId;
+                updatedEntity.DailyPrice = entity.DailyPrice;
+                updatedEntity.ModelYear = entity.ModelYear;
                 context.SaveChanges();
             }
         }

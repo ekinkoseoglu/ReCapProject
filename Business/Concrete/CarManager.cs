@@ -50,13 +50,14 @@ namespace Business.Concrete
          }
           public void Add(Car entity)
         {
-           
-                _carDal.Add(entity);
+                
+            _carDal.Add(entity);
            
         }
 
           public void Update(Car entity)
         {
+            
                  _carDal.Update(entity);
         }
     }

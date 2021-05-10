@@ -48,7 +48,7 @@ namespace ConsoleUI
             //}
 
             Console.WriteLine("---------");
-            efCarManager.Delete(1011);
+            efCarManager.Delete(1011); // It deletes the car for Carid Number
             foreach (var x in efCarManager.GetAll())
             {
                 Console.WriteLine(x.Details + " " + x.CarId);

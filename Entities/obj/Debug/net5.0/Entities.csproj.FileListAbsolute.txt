@@ -1,0 +1,15 @@
+C:\Users\ekind\source\repos\ReCapProject\Entities\bin\Debug\net5.0\Entities.deps.json
+C:\Users\ekind\source\repos\ReCapProject\Entities\bin\Debug\net5.0\Entities.dll
+C:\Users\ekind\source\repos\ReCapProject\Entities\bin\Debug\net5.0\ref\Entities.dll
+C:\Users\ekind\source\repos\ReCapProject\Entities\bin\Debug\net5.0\Entities.pdb
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\Entities.csprojAssemblyReference.cache
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\Entities.AssemblyInfoInputs.cache
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\Entities.AssemblyInfo.cs
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\Entities.dll
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\ref\Entities.dll
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\Entities.pdb
+C:\Users\ekind\source\repos\ReCapProject\Entities\bin\Debug\net5.0\Backbone.dll
+C:\Users\ekind\source\repos\ReCapProject\Entities\bin\Debug\net5.0\Backbone.pdb
+C:\Users\ekind\source\repos\ReCapProject\Entities\obj\Debug\net5.0\Entities.csproj.CopyComplete

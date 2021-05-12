@@ -1,0 +1,17 @@
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\bin\Debug\net5.0\DataAccess.dll
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\bin\Debug\net5.0\ref\DataAccess.dll
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\bin\Debug\net5.0\Entities.dll
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\bin\Debug\net5.0\Entities.pdb
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\DataAccess.dll
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\obj\Debug\net5.0\DataAccess.pdb
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\bin\Debug\net5.0\Backbone.dll
+C:\Users\ekind\source\repos\ReCapProject\DataAccess\bin\Debug\net5.0\Backbone.pdb

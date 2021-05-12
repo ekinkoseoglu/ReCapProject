@@ -29,6 +29,8 @@ namespace Business.Concrete
              _carDal.Delete(deletedcar);
          }
 
+        
+
          public Car Get(int id)
          {
              return _carDal.Get(p => p.CarId == id);

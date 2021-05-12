@@ -13,6 +13,7 @@ namespace Business.Abstract
 
     {
         void Delete(int id);
+        
         void Add(Car entity);
         void Update(Car entity);
         Car Get(int id);

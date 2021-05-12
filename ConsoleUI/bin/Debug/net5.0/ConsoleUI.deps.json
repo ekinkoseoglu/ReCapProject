@@ -1039,6 +1039,14 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Backbone/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5"
+        },
+        "runtime": {
+          "Backbone.dll": {}
+        }
+      },
       "Business/1.0.0": {
         "dependencies": {
           "DataAccess": "1.0.0"
@@ -1049,6 +1057,7 @@
       },
       "DataAccess/1.0.0": {
         "dependencies": {
+          "Backbone": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5"
         },
@@ -1057,6 +1066,9 @@
         }
       },
       "Entities/1.0.0": {
+        "dependencies": {
+          "Backbone": "1.0.0"
+        },
         "runtime": {
           "Entities.dll": {}
         }
@@ -1726,6 +1738,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Backbone/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Business/1.0.0": {
       "type": "project",

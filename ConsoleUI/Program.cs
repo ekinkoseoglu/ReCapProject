@@ -36,9 +36,9 @@ namespace ConsoleUI
             EfCarDal efCarDal = new EfCarDal();
             CarManager efCarManager = new CarManager(efCarDal);
 
-            Car carornek3 = new Car()
+            Car carornek4 = new Car()
             {
-                ColorId = 2,Details = "Volkswagen Jetta", DailyPrice = 20000,ModelYear = "2019",BrandId = 2,CarId = 2008
+                ColorId = 2,Details = "Volkswagen Jetta", DailyPrice = 20000,ModelYear = "2019",BrandId = 2
             };
             //efCarDal.Update(carornek);
             //foreach (var x in efCarManager.GetAll())
@@ -48,11 +48,11 @@ namespace ConsoleUI
             //}
 
             Console.WriteLine("---------");
-            efCarManager.Update(carornek3);
+            
             //efCarManager.Delete(1011); // It deletes the car for Carid Number
-            foreach (var x in efCarManager.GetAll())
+            foreach (var x in efCarManager.GetCarDetails()) 
             {
-                Console.WriteLine(x.Details + " " + x.CarId);
+                Console.WriteLine(x.CarId + "---" + x.ColorName +"----"+ x.Details +"----"+x.BrandName);
             }
         }
     }

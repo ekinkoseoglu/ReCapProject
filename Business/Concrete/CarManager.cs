@@ -8,6 +8,7 @@ using Business.Abstract;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace Business.Concrete
@@ -31,6 +32,11 @@ namespace Business.Concrete
          public Car Get(int id)
          {
              return _carDal.Get(p => p.CarId == id);
+         }
+
+         public List<CarDetailDto> GetCarDetails()
+         {
+             return _carDal.GetCarDetails();
          }
 
          public List<Car> GetAll()
@@ -57,8 +63,7 @@ namespace Business.Concrete
 
           public void Update(Car entity)
         {
-            
-                 _carDal.Update(entity);
+            _carDal.Update(entity);
         }
     }
 }

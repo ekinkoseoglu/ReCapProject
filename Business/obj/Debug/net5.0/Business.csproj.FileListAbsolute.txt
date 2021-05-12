@@ -15,3 +15,5 @@ C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.cspr
 C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.dll
 C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\ref\Business.dll
 C:\Users\ekind\source\repos\ReCapProject\Business\obj\Debug\net5.0\Business.pdb
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\Backbone.dll
+C:\Users\ekind\source\repos\ReCapProject\Business\bin\Debug\net5.0\Backbone.pdb

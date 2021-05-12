@@ -1482,9 +1482,25 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Backbone/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5"
+        },
+        "compile": {
+          "bin/placeholder/Backbone.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Backbone.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Backbone": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -5704,6 +5720,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Backbone/1.0.0": {
+      "type": "project",
+      "path": "../Backbone/Backbone.csproj",
+      "msbuildProject": "../Backbone/Backbone.csproj"
+    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
@@ -5712,6 +5733,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Backbone >= 1.0.0",
       "Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.5"
     ]
@@ -5748,6 +5770,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\ekind\\source\\repos\\ReCapProject\\Backbone\\Backbone.csproj": {
+              "projectPath": "C:\\Users\\ekind\\source\\repos\\ReCapProject\\Backbone\\Backbone.csproj"
+            },
             "C:\\Users\\ekind\\source\\repos\\ReCapProject\\Entities\\Entities.csproj": {
               "projectPath": "C:\\Users\\ekind\\source\\repos\\ReCapProject\\Entities\\Entities.csproj"
             }

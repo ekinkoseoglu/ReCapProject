@@ -6,61 +6,32 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Backbone.DataAccess.EntityFramework;
+using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCarDal : ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, RentingCarDBContext>, ICarDal
     {
-        
-        public void Add(Car entity)
+        public List<CarDetailDto> GetCarDetails()
         {
             using (RentingCarDBContext context = new RentingCarDBContext())
             {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
-            }
-        }
-
-        public void Delete(Car entity)
-        {
-            using (RentingCarDBContext context = new RentingCarDBContext())
-            {
-                var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
-            }
-        }
-
-        public Car Get(Expression<Func<Car, bool>> filter)
-        {
-            using (RentingCarDBContext context = new RentingCarDBContext())
-            {
-                return context.Set<Car>().SingleOrDefault(filter);
-            }
-        }
-
-        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
-        {
-            using (RentingCarDBContext context = new RentingCarDBContext())
-            {
-                return filter == null ? context.Set<Car>().ToList() : context.Set<Car>().Where(filter).ToList();
-            }
-        }
-
-
-        public void Update(Car entity)
-        {
-            using (RentingCarDBContext context = new RentingCarDBContext())
-            {
-                var updatedEntity = context.Cars.SingleOrDefault(p => p.CarId == entity.CarId);
-                updatedEntity.Details = entity.Details;
-                updatedEntity.BrandId = entity.BrandId;
-                updatedEntity.ColorId = entity.ColorId;
-                updatedEntity.DailyPrice = entity.DailyPrice;
-                updatedEntity.ModelYear = entity.ModelYear;
-                context.SaveChanges();
+                var result = from c in context.Cars
+                    join col in context.Colors
+                       
+                        on c.ColorId equals col.ColorId
+                    join b in context.Brands
+                        on c.BrandId equals b.BrandId
+                    select new CarDetailDto
+                    {
+                        CarId = c.CarId,
+                        ColorName = col.ColorName,
+                        Details = c.Details,
+                        BrandName = b.BrandName
+                    };
+                return result.ToList();
             }
         }
     }

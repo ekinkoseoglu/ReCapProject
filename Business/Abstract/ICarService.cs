@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Abstract
 {
@@ -15,6 +16,7 @@ namespace Business.Abstract
         void Add(Car entity);
         void Update(Car entity);
         Car Get(int id);
+        List<CarDetailDto> GetCarDetails();
         List<Car> GetAll();
 
         List<Car> GetAllByColorId(int id);

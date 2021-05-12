@@ -11,6 +11,9 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            CarManager efCarManager = new CarManager(new EfCarDal());
+            BrandManager efBrandManager = new BrandManager(new EfBrandDal());
+            ColorManager efColorManager = new ColorManager(new EfColorDal());
             //ICarDal inMemoryCarDal = new InMemoryCarDal();
 
             //CarManager carManager = new CarManager(inMemoryCarDal);
@@ -33,27 +36,63 @@ namespace ConsoleUI
             //    Console.WriteLine($"Car Brand: {x.BrandId} -- Model: {x.ModelYear} -- Price: {x.DailyPrice} -- Color Code: {x.ColorId} -- Description: {x.Description}");
             //}
 
-            EfCarDal efCarDal = new EfCarDal();
-            CarManager efCarManager = new CarManager(efCarDal);
 
-            Car carornek4 = new Car()
-            {
-                ColorId = 2,Details = "Volkswagen Jetta", DailyPrice = 20000,ModelYear = "2019",BrandId = 2
-            };
+
+          
             //efCarDal.Update(carornek);
             //foreach (var x in efCarManager.GetAll())
             //{
             //    Console.WriteLine(x.Details+" "+x.CarId);
-            
+
             //}
 
-            Console.WriteLine("---------");
-            
-            //efCarManager.Delete(1011); // It deletes the car for Carid Number
+            //Console.WriteLine("---------");
+
+            ////efCarManager.Delete(1011); // It deletes the car for Carid Number
             foreach (var x in efCarManager.GetCarDetails()) 
             {
                 Console.WriteLine(x.CarId + "---" + x.ColorName +"----"+ x.Details +"----"+x.BrandName);
             }
+
+            //Console.WriteLine("-------");
+            
+            //Color colorOrnek = new Color();
+            //colorOrnek.ColorId = 6;
+            //colorOrnek.ColorName = "Lacivert";
+            //var result = efColorManager.Get(4);
+            //Console.WriteLine(result.ColorName);
+            //Console.WriteLine("-----");
+            //foreach (var x in efColorManager.GetAll())
+            //{
+            //    Console.WriteLine(x.ColorId+"-"+x.ColorName);
+            //}
+
+            Console.WriteLine("-------");
+            
+            Brand brandOrnek = new Brand();
+            brandOrnek.BrandName = "Ferrari";
+            
+            
+            //Console.WriteLine("-----");
+            foreach (var x in efColorManager.GetAll())
+            {
+                Console.WriteLine(x.ColorName+"--"+x.ColorId);
+            }
+            
+            Console.WriteLine("---");
+            foreach (var x in efBrandManager.GetAll())
+            {
+                Console.WriteLine(x.BrandId + "--" + x.BrandName);
+            }
+
+           
+            Console.WriteLine("-------");
+            
+            foreach (var x in efCarManager.GetCarDetails())
+            {
+                Console.WriteLine("---" + x.CarId + "----" + x.Details + "----" + x.BrandName+"---"+ x.ColorName);
+            }
+
         }
     }
 }

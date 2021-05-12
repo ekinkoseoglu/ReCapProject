@@ -20,5 +20,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Color> Colors { get; set; }
 
+
     }
 }

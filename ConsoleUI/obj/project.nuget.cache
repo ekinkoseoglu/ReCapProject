@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9lNQyjG/Ap6qtznEU4KsK9cUpJOdTqClF3u2id7gGTe9j+ryQwpIUuXTc+ZRIc5bazj/ZGhBIaHhw4SePGQvQw==",
+  "dgSpecHash": "dZjKFOsKjT/6lwI/uzLWX/m/JZ/FIUk/EjsNW9SLlzkzV5Oqv0kTe1+mXgepbGeDyR/kslGUQwXXrlUd7Nfhiw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ekind\\source\\repos\\ReCapProject\\ConsoleUI\\ConsoleUI.csproj",
+  "projectFilePath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\ConsoleUI\\ConsoleUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

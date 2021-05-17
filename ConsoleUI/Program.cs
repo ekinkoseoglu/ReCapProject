@@ -66,7 +66,7 @@ namespace ConsoleUI
             //    Console.WriteLine(x.ColorId+"-"+x.ColorName);
             //}
             Console.WriteLine("-----------");
-            var result = efCarManager.GetCarDetails();
+            var result = efCarManager.GetCarDetails(); // Car Dto class'ını Listele ve Mesajını Göster
             if (result.Success == true)
             {
                 foreach (var x in result.Data)
@@ -84,7 +84,7 @@ namespace ConsoleUI
             
             
             Console.WriteLine("------------");
-            var result2 = efColorManager.GetAll();
+            var result2 = efColorManager.GetAll(); // Color class'ını Listele ve Mesajını Göster
             if (result2.Success==true)
             {
                 foreach (var x in result2.Data)
@@ -101,7 +101,7 @@ namespace ConsoleUI
 
             Console.WriteLine("-----------");
             
-            var result3 = efBrandManager.GetAll();
+            var result3 = efBrandManager.GetAll(); // Brand class'ını Listele ve Mesajını Göster
             if (result3.Success==true)
             {
                 foreach (var x in result3.Data)
@@ -119,23 +119,10 @@ namespace ConsoleUI
 
            
             Console.WriteLine("-----------");
-            var result4 = efCarManager.GetCarDetails();
-            if (result4.Success==true)
-            {
-                foreach (var x in result4.Data)
-                {
-                    Console.WriteLine("---" + x.CarId + "----" + x.Details + "----" + x.BrandName + "---" + x.ColorName);
-                }
+           
 
-                Console.WriteLine(result4.Message);
-            }
-            else
-            {
-                Console.WriteLine(result4.Message);
-            }
-
-            Console.WriteLine("-------");
-            var result5 = efCarManager.Get(6);
+            
+            var result5 = efCarManager.Get(6); // Id Numarası 6 olan Car'ı getir ve ekrana mesajını yazdır
             Console.WriteLine(result5.Data.Details);
             Console.WriteLine(result5.Message);
 
@@ -144,7 +131,7 @@ namespace ConsoleUI
 
 
             var result6 = efCarManager.Add(new Car
-                {BrandId = 1, ColorId = 1, DailyPrice = 34000, ModelYear = "2020", Details = "Black Ford Mustang"});
+                {BrandId = 1, ColorId = 1, DailyPrice = 34000, ModelYear = "2020", Details = "Black Ford Mustang"});// Yeni bir car ekle ve eklendiğinin mesajını göster
             Console.WriteLine(result6.Message);
         }
     }

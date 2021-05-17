@@ -38,7 +38,7 @@ namespace ConsoleUI
 
 
 
-          
+
             //efCarDal.Update(carornek);
             //foreach (var x in efCarManager.GetAll())
             //{
@@ -49,13 +49,12 @@ namespace ConsoleUI
             //Console.WriteLine("---------");
 
             ////efCarManager.Delete(1011); // It deletes the car for Carid Number
-            foreach (var x in efCarManager.GetCarDetails()) 
-            {
-                Console.WriteLine(x.CarId + "---" + x.ColorName +"----"+ x.Details +"----"+x.BrandName);
-            }
+
+
+
 
             //Console.WriteLine("-------");
-            
+
             //Color colorOrnek = new Color();
             //colorOrnek.ColorId = 6;
             //colorOrnek.ColorName = "Lacivert";
@@ -66,33 +65,87 @@ namespace ConsoleUI
             //{
             //    Console.WriteLine(x.ColorId+"-"+x.ColorName);
             //}
+            Console.WriteLine("-----------");
+            var result = efCarManager.GetCarDetails();
+            if (result.Success == true)
+            {
+                foreach (var x in result.Data)
+                {
+                    Console.WriteLine(x.CarId + "---" + x.ColorName + "----" + x.Details + "----" + x.BrandName);
+                }
 
-            Console.WriteLine("-------");
-            
-            Brand brandOrnek = new Brand();
-            brandOrnek.BrandName = "Ferrari";
-            
-            
-            //Console.WriteLine("-----");
-            foreach (var x in efColorManager.GetAll())
+                Console.WriteLine(result.Message);
+            }
+            else
             {
-                Console.WriteLine(x.ColorName+"--"+x.ColorId);
+                Console.WriteLine(result.Message);
+            }
+           
+            
+            
+            Console.WriteLine("------------");
+            var result2 = efColorManager.GetAll();
+            if (result2.Success==true)
+            {
+                foreach (var x in result2.Data)
+                {
+                    Console.WriteLine(x.ColorName + "--" + x.ColorId);
+                }
+
+                Console.WriteLine(result2.Message);
+            }
+            else
+            {
+                Console.WriteLine(result2.Message);
+            }
+
+            Console.WriteLine("-----------");
+            
+            var result3 = efBrandManager.GetAll();
+            if (result3.Success==true)
+            {
+                foreach (var x in result3.Data)
+                {
+                    Console.WriteLine(x.BrandId + "--" + x.BrandName);
+                }
+
+                Console.WriteLine(result3.Message);
+            }
+            else
+            {
+                Console.WriteLine(result3.Message);
             }
             
-            Console.WriteLine("---");
-            foreach (var x in efBrandManager.GetAll())
-            {
-                Console.WriteLine(x.BrandId + "--" + x.BrandName);
-            }
 
            
-            Console.WriteLine("-------");
-            
-            foreach (var x in efCarManager.GetCarDetails())
+            Console.WriteLine("-----------");
+            var result4 = efCarManager.GetCarDetails();
+            if (result4.Success==true)
             {
-                Console.WriteLine("---" + x.CarId + "----" + x.Details + "----" + x.BrandName+"---"+ x.ColorName);
+                foreach (var x in result4.Data)
+                {
+                    Console.WriteLine("---" + x.CarId + "----" + x.Details + "----" + x.BrandName + "---" + x.ColorName);
+                }
+
+                Console.WriteLine(result4.Message);
+            }
+            else
+            {
+                Console.WriteLine(result4.Message);
             }
 
+            Console.WriteLine("-------");
+            var result5 = efCarManager.Get(6);
+            Console.WriteLine(result5.Data.Details);
+            Console.WriteLine(result5.Message);
+
+
+            Console.WriteLine("--------");
+
+
+            var result6 = efCarManager.Add(new Car
+                {BrandId = 1, ColorId = 1, DailyPrice = 34000, ModelYear = "2020", Details = "Black Ford Mustang"});
+            Console.WriteLine(result6.Message);
         }
     }
 }

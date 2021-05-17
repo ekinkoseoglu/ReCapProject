@@ -3,47 +3,72 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Backbone.Utilities;
 using Business.Abstract;
+using Business.Constants;
 using DataAccess.Abstract;
 using Entities.Concrete;
 
 namespace Business.Concrete
 {
-   public class ColorManager:IColorService
-   {
-       private IColorDal _colorDal;
+    public class ColorManager : IColorService
+    {
+        private IColorDal _colorDal;
 
-       public ColorManager(IColorDal colorDal)
-       {
-           _colorDal = colorDal;
-       }
-
-       public void Delete(int id)
-       {
-           var deletedColor = _colorDal.Get(c => c.ColorId == id);
-           _colorDal.Delete(deletedColor);
-       }
-
-      
-
-       public void Add(Color entity)
+        public ColorManager(IColorDal colorDal)
         {
+            _colorDal = colorDal;
+        }
+
+        public IResult Delete(int id)
+        {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorResult(Messages.MaintenanceTime);
+            }
+            var deletedColor = _colorDal.Get(c => c.ColorId == id);
+            _colorDal.Delete(deletedColor);
+            return new SuccessResult(Messages.ProductDeleted);
+        }
+
+
+
+        public IResult Add(Color entity)
+        {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorResult(Messages.MaintenanceTime);
+            }
             _colorDal.Add(entity);
+            return new SuccessResult(Messages.ProductAdded);
         }
 
-        public void Update(Color entity)
+        public IResult Update(Color entity)
         {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorResult(Messages.MaintenanceTime);
+            }
             _colorDal.Update(entity);
+            return new SuccessResult(Messages.ProductUpdated);
         }
 
-        public Color Get(int id)
+        public IDataResult<Color> Get(int id)
         {
-            return _colorDal.Get(c => c.ColorId == id);
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorDataResult<Color>(Messages.ProductShown);
+            }
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == id));
         }
 
-        public List<Color> GetAll()
+        public IDataResult<List<Color>> GetAll()
         {
-            return _colorDal.GetAll();
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ProductListed);
         }
     }
 }

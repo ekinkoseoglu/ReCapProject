@@ -12,6 +12,7 @@ namespace Backbone.Utilities
         {
             Message = message;
         }
+
         public Result(bool success)
         {
             Success = success;

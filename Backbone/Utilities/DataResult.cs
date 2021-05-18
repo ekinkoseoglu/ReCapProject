@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backbone.Utilities
 {
-    public class DataResult<T> : Result, IDataResult<T>
+    public class DataResult<T> :Result, IDataResult<T>// Class constructor'unda ilk olarak Result classından alınan bilgiler kullanıldıgı için ilk implementasyon class tarafından gerçekleştirilmelidir
     {
         public DataResult(T data, bool success, string message):base(success,message)
         {
@@ -19,4 +19,5 @@ namespace Backbone.Utilities
         }
         public T Data { get; }
     }
+    
 }

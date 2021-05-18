@@ -8,24 +8,22 @@ namespace Backbone.Utilities
 {
     public class SuccessDataResult<T>:DataResult<T>,IResult
     {
-        public SuccessDataResult(T data,  string message) : base(data, true, message)
+        public SuccessDataResult(T data, bool success, string message) : base(data, true, message)
         {
-            // Hem data hem mesaj girmek için
         }
 
-        public SuccessDataResult(T data) : base(data, true)
+        public SuccessDataResult(T data, bool success) : base(data, true)
         {
-            // sadece data girmek için
         }
 
         public SuccessDataResult(string message):base(default,true,message)
         {
-            // sadece mesaj girmek için (Nadir)
+            
         }
 
-        public SuccessDataResult() : base(default, true) // Bir üsttekinin mesaj vermeyen hali
+        public SuccessDataResult():base(default,true)
         {
-            // Hiçbir parametre girmene gerek yok (Nadir)
+            
         }
     }
 }

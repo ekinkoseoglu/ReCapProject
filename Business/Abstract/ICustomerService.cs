@@ -8,12 +8,12 @@ using Entities.Concrete;
 
 namespace Business.Abstract
 {
-   public interface IUserService
+   public interface ICustomerService
     {
         IResult Delete(int id);
-        IResult Add(User entity);
-        IResult Update(User entity);
-        IDataResult<User> Get(int id);
-        IDataResult<List<User>> GetAll();
+        IResult Add(Customer entity);
+        IResult Update(Customer entity);
+        IDataResult<Customer> Get(int id);
+        IDataResult<List<Customer>> GetAll();
     }
 }

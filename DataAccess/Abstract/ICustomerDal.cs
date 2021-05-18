@@ -8,7 +8,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-   public interface IUserDal:IEntityRepository<User>
+   public interface ICustomerDal:IEntityRepository<Customer>
     {
     }
 }

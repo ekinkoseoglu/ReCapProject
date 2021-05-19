@@ -80,12 +80,12 @@ namespace ConsoleUI
             {
                 Console.WriteLine(result.Message);
             }
-           
-            
-            
+
+
+
             Console.WriteLine("------------");
             var result2 = efColorManager.GetAll(); // Color class'ını Listele ve Mesajını Göster
-            if (result2.Success==true)
+            if (result2.Success == true)
             {
                 foreach (var x in result2.Data)
                 {
@@ -100,9 +100,9 @@ namespace ConsoleUI
             }
 
             Console.WriteLine("-----------");
-            
+
             var result3 = efBrandManager.GetAll(); // Brand class'ını Listele ve Mesajını Göster
-            if (result3.Success==true)
+            if (result3.Success == true)
             {
                 foreach (var x in result3.Data)
                 {
@@ -115,13 +115,13 @@ namespace ConsoleUI
             {
                 Console.WriteLine(result3.Message);
             }
-            
 
-           
+
+
             Console.WriteLine("-----------");
-           
 
-            
+
+
             var result5 = efCarManager.Get(6); // Id Numarası 6 olan Car'ı getir ve ekrana mesajını yazdır
             Console.WriteLine(result5.Data.Details);
             Console.WriteLine(result5.Message);
@@ -131,8 +131,35 @@ namespace ConsoleUI
 
 
             var result6 = efCarManager.Add(new Car
-                {BrandId = 1, ColorId = 1, DailyPrice = 34000, ModelYear = "2020", Details = "Black Ford Mustang"});// Yeni bir car ekle ve eklendiğinin mesajını göster
+            { BrandId = 1, ColorId = 1, DailyPrice = 34000, ModelYear = "2020", Details = "Black Ford Mustang" });// Yeni bir car ekle ve eklendiğinin mesajını göster
             Console.WriteLine(result6.Message);
+
+            Console.WriteLine("------");
+
+            UserManager efUserManager = new UserManager(new EfUserDal());
+           
+           efUserManager.Add(new User { FirstName = "Engin", LastName = "Demiroğ", UserPassword = "123456", Email = "engindemirog@gmail.com" }); // Yeni bir User Ekliyorum
+            foreach (var x in efUserManager.GetAll().Data)
+            {
+                Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
+            }
+
+            Console.WriteLine("------");
+            CustomerManager efCustomerManager = new CustomerManager(new EfCustomerDal());
+            // efCustomerManager.Add(new Customer { CompanyName = "Ford", UserId = 4 });
+            foreach (var x in efCustomerManager.GetAll().Data)
+            {
+                Console.WriteLine(x.UserId+"---"+x.CustomerId + "---" + x.CompanyName);
+            }
+
+
+            Console.WriteLine("----");
+            //foreach (var x in efCustomerManager.GetAll().Data)
+            //{
+            //    Console.WriteLine(x.UserId + "--", x.CustomerId + "--" + x.CompanyName);
+            //}
+
+
         }
     }
 }

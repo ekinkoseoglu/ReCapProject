@@ -27,7 +27,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.MaintenanceTime);
             }
 
-            var deletedUser = _userDal.Get(u => u.Id == id);
+            var deletedUser = _userDal.Get(u => u.UserId == id);
             _userDal.Delete(deletedUser);
             return new SuccessResult("User Deleted");
         }
@@ -59,7 +59,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<User>(Messages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<User>(_userDal.Get(u => u.Id == id), "User Has Shown");
+            return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == id), "User Has Shown");
         }
 
         public IDataResult<List<User>> GetAll()

@@ -18,7 +18,7 @@ namespace Business.Concrete
         public RentalManager(IRentalDal rentalDal)
         {
             _rentalDal = rentalDal;
-        }
+        } // ctrl M M
 
         public IResult Delete(int id)
         {

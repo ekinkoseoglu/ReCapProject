@@ -11,7 +11,7 @@ using Entities.Concrete;
 
 namespace Business.Concrete
 {
-    public class RentalManager:IRentalService
+    public class RentalManager : IRentalService
     {
         private IRentalDal _rentalDal;
 
@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public IResult Delete(int id)
         {
-            if (DateTime.Now.Hour>=22&DateTime.Now.Hour <= 7)
+            if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }
@@ -34,14 +34,23 @@ namespace Business.Concrete
 
         public IResult Add(Rental entity)
         {
+            var addedRent = _rentalDal.Get(r=>r.CarId==entity.CarId);
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }
-            _rentalDal.Add(entity);
-            return new SuccessResult("Rental Added");
+            else if(addedRent==null)
+            {
+                _rentalDal.Add(entity);
+                return new SuccessResult("Araba Kiralandı");
+            }
+            else
+            {
+                return new ErrorResult("Araba Zaten Kullanımda");
+            }
+                
         }
-
+        
         public IResult Update(Rental entity)
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
@@ -59,7 +68,8 @@ namespace Business.Concrete
                 return new ErrorDataResult<Rental>(Messages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.RentalId == id),"Rental Has Shown");
+
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.RentalId == id), "Rental Has Shown");
         }
 
         public IDataResult<List<Rental>> GetAll()
@@ -71,5 +81,11 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), "Rental Listed");
         }
+
     }
+
+
+
+    
 }
+

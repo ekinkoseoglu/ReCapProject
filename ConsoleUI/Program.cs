@@ -138,7 +138,7 @@ namespace ConsoleUI
 
             UserManager efUserManager = new UserManager(new EfUserDal());
            
-           efUserManager.Add(new User { FirstName = "Engin", LastName = "Demiroğ", UserPassword = "123456", Email = "engindemirog@gmail.com" }); // Yeni bir User Ekliyorum
+          // efUserManager.Add(new User { FirstName = "Engin", LastName = "Demiroğ", UserPassword = "123456", Email = "engindemirog@gmail.com" }); // Yeni bir User Ekliyorum
             foreach (var x in efUserManager.GetAll().Data)
             {
                 Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
@@ -158,8 +158,34 @@ namespace ConsoleUI
             //{
             //    Console.WriteLine(x.UserId + "--", x.CustomerId + "--" + x.CompanyName);
             //}
+           
+            
+            foreach (var x in efUserManager.GetAll().Data)
+            {
+                Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
+            }
+
+            var time2= "10 / 1 / 2008";
+            DateTime RentalDate = DateTime.Parse(time2);
 
 
+            var time = "1 / 1 / 2008";
+            DateTime ReturntDate= DateTime.Parse(time);
+
+
+            Console.WriteLine("------------");
+            RentalManager efRentalManager = new RentalManager(new EfRentalDal());
+            var result8 = efRentalManager.Add(new Rental { CarId = 3, CustomerId = 7, RentDate = RentalDate, ReturnDate = ReturntDate });
+
+
+            Console.WriteLine(result8.Message);
+            Console.WriteLine("------------");
+
+            foreach (var x in efRentalManager.GetAll().Data)
+            {
+                Console.WriteLine(x.RentalId+"--"+x.CarId+"--"+x.CustomerId+"--"+x.RentDate+"--"+x.ReturnDate);
+                
+            }
         }
     }
 }

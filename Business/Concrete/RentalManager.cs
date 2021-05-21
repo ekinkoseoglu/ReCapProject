@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Backbone.Utilities;
+﻿using Backbone.Utilities;
 using Business.Abstract;
 using Business.Constants;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace Business.Concrete
 {
@@ -34,12 +31,12 @@ namespace Business.Concrete
 
         public IResult Add(Rental entity)
         {
-            var addedRent = _rentalDal.Get(r=>r.CarId==entity.CarId);
+            var addedRent = _rentalDal.Get(r => r.CarId == entity.CarId);
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }
-            else if(addedRent==null)
+            else if (addedRent == null)
             {
                 _rentalDal.Add(entity);
                 return new SuccessResult("Araba Kiralandı");
@@ -48,9 +45,9 @@ namespace Business.Concrete
             {
                 return new ErrorResult("Araba Zaten Kullanımda");
             }
-                
+
         }
-        
+
         public IResult Update(Rental entity)
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
@@ -86,6 +83,6 @@ namespace Business.Concrete
 
 
 
-    
+
 }
 

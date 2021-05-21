@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Backbone.Utilities;
+﻿using Backbone.Utilities;
 using Business.Abstract;
 using Business.Constants;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace Business.Concrete
 {

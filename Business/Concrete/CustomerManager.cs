@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Backbone.Utilities;
+﻿using Backbone.Utilities;
 using Business.Abstract;
 using Business.Constants;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace Business.Concrete
 {
-    public class CustomerManager:ICustomerService
+    public class CustomerManager : ICustomerService
     {
         private ICustomerDal _customerDal;
 
@@ -59,7 +56,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<Customer>(Messages.MaintenanceTime);
             }
 
-            return new ErrorDataResult<Customer>(_customerDal.Get(p => p.UserId == id),"Customer Has Shown");
+            return new ErrorDataResult<Customer>(_customerDal.Get(p => p.UserId == id), "Customer Has Shown");
         }
 
         public IDataResult<List<Customer>> GetAll()

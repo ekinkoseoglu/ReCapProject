@@ -1,9 +1,7 @@
-﻿using System;
-using Business.Concrete;
-using DataAccess.Abstract;
+﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
-using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
+using System;
 
 namespace ConsoleUI
 {
@@ -130,15 +128,15 @@ namespace ConsoleUI
             Console.WriteLine("--------");
 
 
-            var result6 = efCarManager.Add(new Car
-            { BrandId = 1, ColorId = 1, DailyPrice = 34000, ModelYear = "2020", Details = "Black Ford Mustang" });// Yeni bir car ekle ve eklendiğinin mesajını göster
-            Console.WriteLine(result6.Message);
+            //var result6 = efCarManager.Add(new Car
+            //{ BrandId = 1, ColorId = 1, DailyPrice = 34000, ModelYear = "2020", Details = "Black Ford Mustang" });// Yeni bir car ekle ve eklendiğinin mesajını göster
+            //Console.WriteLine(result6.Message);
 
             Console.WriteLine("------");
 
             UserManager efUserManager = new UserManager(new EfUserDal());
-           
-          // efUserManager.Add(new User { FirstName = "Engin", LastName = "Demiroğ", UserPassword = "123456", Email = "engindemirog@gmail.com" }); // Yeni bir User Ekliyorum
+
+            // efUserManager.Add(new User { FirstName = "Engin", LastName = "Demiroğ", UserPassword = "123456", Email = "engindemirog@gmail.com" }); // Yeni bir User Ekliyorum
             foreach (var x in efUserManager.GetAll().Data)
             {
                 Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
@@ -149,7 +147,7 @@ namespace ConsoleUI
             // efCustomerManager.Add(new Customer { CompanyName = "Ford", UserId = 4 });
             foreach (var x in efCustomerManager.GetAll().Data)
             {
-                Console.WriteLine(x.UserId+"---"+x.CustomerId + "---" + x.CompanyName);
+                Console.WriteLine(x.UserId + "---" + x.CustomerId + "---" + x.CompanyName);
             }
 
 
@@ -158,19 +156,19 @@ namespace ConsoleUI
             //{
             //    Console.WriteLine(x.UserId + "--", x.CustomerId + "--" + x.CompanyName);
             //}
-           
-            
+
+
             foreach (var x in efUserManager.GetAll().Data)
             {
                 Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
             }
 
-            var time2= "10 / 1 / 2008";
+            var time2 = "10 / 1 / 2008";
             DateTime RentalDate = DateTime.Parse(time2);
 
 
             var time = "1 / 1 / 2008";
-            DateTime ReturntDate= DateTime.Parse(time);
+            DateTime ReturntDate = DateTime.Parse(time);
 
 
             Console.WriteLine("------------");
@@ -183,8 +181,8 @@ namespace ConsoleUI
 
             foreach (var x in efRentalManager.GetAll().Data)
             {
-                Console.WriteLine(x.RentalId+"--"+x.CarId+"--"+x.CustomerId+"--"+x.RentDate+"--"+x.ReturnDate);
-                
+                Console.WriteLine(x.RentalId + "--" + x.CarId + "--" + x.CustomerId + "--" + x.RentDate + "--" + x.ReturnDate);
+
             }
         }
     }

@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Backbone.Utilities;
+﻿using Backbone.Utilities;
 using Business.Abstract;
 using Business.Constants;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using System;
+using System.Collections.Generic;
 
 namespace Business.Concrete
 {
-    public class UserManager:IUserService
+    public class UserManager : IUserService
     {
         private IUserDal _userDal;
 
@@ -22,7 +19,7 @@ namespace Business.Concrete
 
         public IResult Delete(int id)
         {
-            if (DateTime.Now.Hour >22 && DateTime.Now.Hour <9)
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }

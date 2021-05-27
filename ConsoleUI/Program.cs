@@ -173,15 +173,15 @@ namespace ConsoleUI
 
             Console.WriteLine("------------");
             RentalManager efRentalManager = new RentalManager(new EfRentalDal());
-            var result8 = efRentalManager.Add(new Rental { CarId = 3, CustomerId = 7, RentDate = RentalDate, ReturnDate = ReturntDate });
+            //var result8 = efRentalManager.Add(new Rental { CarId = 3, CustomerId = 7, RentDate = RentalDate, ReturnDate = ReturntDate });
 
 
-            Console.WriteLine(result8.Message);
+            //Console.WriteLine(result8.Message);
             Console.WriteLine("------------");
 
             foreach (var x in efRentalManager.GetAll().Data)
             {
-                Console.WriteLine(x.RentalId + "--" + x.CarId + "--" + x.CustomerId + "--" + x.RentDate + "--" + x.ReturnDate);
+                Console.WriteLine("RentalID: "+x.RentalId + "--"+"CarID: " + x.CarId + "-- " + "CustomerID: " + x.CustomerId + "--" + " RentDate: "+x.RentDate + "--" +"ReturnDate:  "+ x.ReturnDate);
 
             }
         }

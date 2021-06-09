@@ -1,6 +1,8 @@
-﻿using Backbone.Utilities;
+﻿using Backbone.CrossCuttingConcerns.Validation;
+using Backbone.Utilities;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -31,10 +33,8 @@ namespace Business.Concrete
 
         public IResult Add(User entity)
         {
-            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
-            {
-                return new ErrorResult(Messages.MaintenanceTime);
-            }
+            ValidationTool.Validate(new UserValidator(), entity); /* 2. molaya girmeden hemen öncesini izle */
+
             _userDal.Add(entity);
             return new SuccessResult("User Added");
         }

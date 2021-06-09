@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Y03CGXBgujf5q5EnfuoZhmWP5CP3l2KCX7ZxFBHGn/dDOmkZIyds6pSEdHuRTBorOn+aAw3agKnxJCeagErK6Q==",
+  "dgSpecHash": "3lUtc1tVMeEPA95O57qVilgl5SkDv0ZYiihyjuRZwGRP1PicX5YGnSNwLKI4qS5bEzs2IUinpfFQV+OMHiILpg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\Backbone.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ekind\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

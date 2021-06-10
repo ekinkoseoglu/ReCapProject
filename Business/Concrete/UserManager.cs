@@ -7,6 +7,8 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Validation;
+using Backbone.Utilities.Results;
 
 namespace Business.Concrete
 {
@@ -31,9 +33,10 @@ namespace Business.Concrete
             return new SuccessResult("User Deleted");
         }
 
+        [ValidationAspect(typeof(UserValidator))]
         public IResult Add(User entity)
         {
-            ValidationTool.Validate(new UserValidator(), entity); /* 2. molaya girmeden hemen öncesini izle */
+            
 
             _userDal.Add(entity);
             return new SuccessResult("User Added");

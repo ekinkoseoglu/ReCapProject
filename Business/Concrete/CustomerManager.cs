@@ -5,6 +5,10 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Validation;
+using Backbone.CrossCuttingConcerns.Validation;
+using Backbone.Utilities.Results;
+using Business.ValidationRules.FluentValidation;
 
 namespace Business.Concrete
 {
@@ -29,12 +33,11 @@ namespace Business.Concrete
             return new SuccessResult("Customer Deleted");
         }
 
+        [ValidationAspect(typeof(CustomerValidator))]
         public IResult Add(Customer entity)
         {
-            if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
-            {
-                return new ErrorResult(Messages.MaintenanceTime);
-            }
+            
+
             _customerDal.Add(entity);
             return new SuccessResult("Customer Added");
         }

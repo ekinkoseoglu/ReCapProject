@@ -6,6 +6,10 @@ using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Validation;
+using Backbone.CrossCuttingConcerns.Validation;
+using Backbone.Utilities.Results;
+using Business.ValidationRules.FluentValidation;
 
 namespace Business.Concrete
 {
@@ -80,12 +84,10 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max), Messages.ProductListed);
         }
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car entity)
         {
-            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
-            {
-                return new ErrorResult(Messages.MaintenanceTime);
-            }
+            
 
             _carDal.Add(entity);
             return new SuccessResult(Messages.ProductAdded);

@@ -5,6 +5,10 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Validation;
+using Backbone.CrossCuttingConcerns.Validation;
+using Backbone.Utilities.Results;
+using Business.ValidationRules.FluentValidation;
 
 namespace Business.Concrete
 {
@@ -30,13 +34,12 @@ namespace Business.Concrete
         }
 
 
-
+        [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color entity)
         {
-            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
-            {
-                return new ErrorResult(Messages.MaintenanceTime);
-            }
+           
+            
+
             _colorDal.Add(entity);
             return new SuccessResult(Messages.ProductAdded);
         }

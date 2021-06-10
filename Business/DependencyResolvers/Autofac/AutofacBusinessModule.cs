@@ -1,6 +1,9 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
+using Backbone.Utilities.Interceptors;
 using Business.Abstract;
 using Business.Concrete;
+using Castle.DynamicProxy;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 
@@ -27,6 +30,17 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
+
+
+            /*  Yukarıdaki bütün sınıflar için önce burada Aspectleri var mı ? diye kontrol ediyor  */
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces() //Implemente edilmiş interfacelerin bulup
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions
+                {
+                    Selector = new AspectInterceptorSelector() // onlar için "AspectInterceptorSelector" kullanıyor
+                }).SingleInstance();
+
         }
     }
 }

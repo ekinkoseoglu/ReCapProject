@@ -1,10 +1,14 @@
-﻿using Backbone.Utilities;
+﻿
 using Business.Abstract;
 using Business.Constants;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Validation;
+using Backbone.CrossCuttingConcerns.Validation;
+using Backbone.Utilities.Results;
+using Business.ValidationRules.FluentValidation;
 
 
 namespace Business.Concrete
@@ -31,13 +35,12 @@ namespace Business.Concrete
         }
 
 
-
+        [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Brand entity)
         {
-            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
-            {
-                return new ErrorResult(Messages.MaintenanceTime);
-            }
+           
+            
+
             _brandDal.Add(entity);
             return new SuccessResult(Messages.ProductAdded);
         }

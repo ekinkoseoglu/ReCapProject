@@ -140,3 +140,8 @@ C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\obj\Debug\net5.0\ConsoleU
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\obj\Debug\net5.0\ref\ConsoleUI.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\obj\Debug\net5.0\ConsoleUI.pdb
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\obj\Debug\net5.0\ConsoleUI.genruntimeconfig.cache
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Autofac.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Autofac.Extras.DynamicProxy.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\FluentValidation.dll

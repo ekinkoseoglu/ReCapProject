@@ -5,6 +5,10 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Validation;
+using Backbone.CrossCuttingConcerns.Validation;
+using Backbone.Utilities.Results;
+using Business.ValidationRules.FluentValidation;
 
 namespace Business.Concrete
 {
@@ -29,8 +33,11 @@ namespace Business.Concrete
             return new SuccessResult("Rental Deleted");
         }
 
+        [ValidationAspect(typeof(RentalValidator))]
         public IResult Add(Rental entity)
         {
+            
+
             var addedRent = _rentalDal.Get(r => r.CarId == entity.CarId);
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
             {

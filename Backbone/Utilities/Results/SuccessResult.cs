@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backbone.Utilities
+namespace Backbone.Utilities.Results
 {
     public class SuccessResult:Result
     {

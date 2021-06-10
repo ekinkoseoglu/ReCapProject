@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backbone.Utilities
+namespace Backbone.Utilities.Results
 {
-   public interface IResult
+   public interface IDataResult<T>:IResult
     {
-        public bool Success { get; }
-        public string Message { get; }
+        public T Data { get; }
     }
 }

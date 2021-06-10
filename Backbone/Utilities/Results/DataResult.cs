@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backbone.Utilities
+namespace Backbone.Utilities.Results
 {
     public class DataResult<T> :Result, IDataResult<T>// Class constructor'unda ilk olarak Result classından alınan bilgiler kullanıldıgı için ilk implementasyon class tarafından gerçekleştirilmelidir
     {

@@ -356,7 +356,7 @@
       "Autofac.Extras.DynamicProxy/6.0.0": {
         "dependencies": {
           "Autofac": "6.2.0",
-          "Castle.Core": "4.4.0"
+          "Castle.Core": "4.4.1"
         },
         "runtime": {
           "lib/netstandard2.1/Autofac.Extras.DynamicProxy.dll": {
@@ -368,7 +368,7 @@
           "lib/netstandard2.1/Autofac.Extras.DynamicProxy.dll": {}
         }
       },
-      "Castle.Core/4.4.0": {
+      "Castle.Core/4.4.1": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "System.Collections.Specialized": "4.3.0",
@@ -384,7 +384,7 @@
         "runtime": {
           "lib/netstandard1.5/Castle.Core.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.4.0.0"
+            "fileVersion": "4.4.1.0"
           }
         },
         "compile": {
@@ -1761,6 +1761,10 @@
       },
       "Backbone/1.0.0": {
         "dependencies": {
+          "Autofac": "6.2.0",
+          "Autofac.Extensions.DependencyInjection": "7.1.0",
+          "Autofac.Extras.DynamicProxy": "6.0.0",
+          "Castle.Core": "4.4.1",
           "FluentValidation": "10.2.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5"
         },
@@ -3525,12 +3529,12 @@
       "path": "autofac.extras.dynamicproxy/6.0.0",
       "hashPath": "autofac.extras.dynamicproxy.6.0.0.nupkg.sha512"
     },
-    "Castle.Core/4.4.0": {
+    "Castle.Core/4.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
-      "path": "castle.core/4.4.0",
-      "hashPath": "castle.core.4.4.0.nupkg.sha512"
+      "sha512": "sha512-zanbjWC0Y05gbx4eGXkzVycOQqVOFVeCjVsDSyuao9P4mtN1w3WxxTo193NGC7j3o2u3AJRswaoC6hEbnGACnQ==",
+      "path": "castle.core/4.4.1",
+      "hashPath": "castle.core.4.4.1.nupkg.sha512"
     },
     "FluentValidation/10.2.3": {
       "type": "package",

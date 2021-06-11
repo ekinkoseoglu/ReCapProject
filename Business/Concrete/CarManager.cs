@@ -1,15 +1,13 @@
-﻿using Backbone.Utilities;
+﻿using Backbone.Aspects.Autofac.Validation;
+using Backbone.Utilities.Results;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
-using Backbone.Aspects.Autofac.Validation;
-using Backbone.CrossCuttingConcerns.Validation;
-using Backbone.Utilities.Results;
-using Business.ValidationRules.FluentValidation;
 
 namespace Business.Concrete
 {
@@ -87,7 +85,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car entity)
         {
-            
+
 
             _carDal.Add(entity);
             return new SuccessResult(Messages.ProductAdded);

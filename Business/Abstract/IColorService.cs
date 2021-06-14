@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Backbone.Utilities;
-using Backbone.Utilities.Results;
+﻿using Backbone.Utilities.Results;
 using Entities.Concrete;
+using System.Collections.Generic;
 
 namespace Business.Abstract
 {
-   public interface IColorService
+    public interface IColorService
     {
         IResult Delete(int id);
         IResult Add(Color entity);

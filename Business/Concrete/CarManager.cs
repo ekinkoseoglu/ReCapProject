@@ -28,6 +28,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.MaintenanceTime);
             }
             var deletedcar = _carDal.Get(p => p.CarId == id);
+            _carDal.Delete(deletedcar);
             return new SuccessResult(Messages.ProductDeleted);
         }
 

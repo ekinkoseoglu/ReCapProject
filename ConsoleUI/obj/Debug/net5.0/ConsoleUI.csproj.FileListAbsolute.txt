@@ -145,3 +145,9 @@ C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Autofac.
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Autofac.Extras.DynamicProxy.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Net.Http.Headers.dll

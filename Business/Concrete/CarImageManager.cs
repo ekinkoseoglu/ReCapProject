@@ -3,6 +3,7 @@ using Business.Abstract;
 using Business.Constants;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 
 namespace Business.Concrete
 {
@@ -15,17 +16,19 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
         }
 
-        public IResult Delete(CarImage carImage)
+        public IResult Add(IFormFile file, CarImage carImage)
         {
-            var deletedImage = _carImageDal.Get(i => i.ImagePath == carImage.ImagePath);
-            _carImageDal.Delete(deletedImage);
-            return new SuccessResult(Messages.ImageDeleted);
+            throw new System.NotImplementedException();
         }
 
-        public IResult Update(CarImage carImage)
+        public IResult Update(IFormFile file, CarImage carImage)
         {
-            _carImageDal.Update(carImage);
-            return new SuccessResult(Messages.ImageUpdated);
+            throw new System.NotImplementedException();
+        }
+
+        public IResult Delete(CarImage carImage)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

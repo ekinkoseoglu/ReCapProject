@@ -1,17 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.IO;
 
 namespace Backbone.Utilities.Helpers
 {
-    public class FileHelper:IFileHelper
+    public class FileHelper : IFileHelper
     {
         public string Add(IFormFile file)
         {
-            throw new NotImplementedException();
+            string path = Environment.CurrentDirectory + @"\wwwroot";
+            var sourcePath = Path.GetTempFileName();
+            if (file.Length > 0)
+            {
+                using (var stream = new FileStream(sourcePath, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+            }
+
+            var result = NewPath(file); // *
+            File.Move(sourcePath, path + result); // *
+            return result.Replace("\\", "/");
         }
 
         public string Update(string sourcePath, IFormFile file)
@@ -22,6 +31,16 @@ namespace Backbone.Utilities.Helpers
         public string Delete(string path)
         {
             throw new NotImplementedException();
+        }
+
+        public static string NewPath(IFormFile formFile)
+        {
+            FileInfo fileInfo = new FileInfo(formFile.FileName);
+            string fileExtension = fileInfo.Extension;
+
+            var newpath = Guid.NewGuid().ToString() + fileExtension;
+
+            return @"\Images\" + newpath;
         }
     }
 }

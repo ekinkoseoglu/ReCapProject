@@ -1,14 +1,12 @@
-﻿using Backbone.Utilities;
+﻿using Backbone.Aspects.Autofac.Validation;
+using Backbone.Utilities.Results;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using Backbone.Aspects.Autofac.Validation;
-using Backbone.CrossCuttingConcerns.Validation;
-using Backbone.Utilities.Results;
-using Business.ValidationRules.FluentValidation;
 
 namespace Business.Concrete
 {
@@ -36,7 +34,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(RentalValidator))]
         public IResult Add(Rental entity)
         {
-            
+
 
             var addedRent = _rentalDal.Get(r => r.CarId == entity.CarId);
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)

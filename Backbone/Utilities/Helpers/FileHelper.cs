@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Backbone.Utilities.Results;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
 
@@ -8,6 +9,7 @@ namespace Backbone.Utilities.Helpers
     {
         public string Add(IFormFile file)
         {
+
             string path = Environment.CurrentDirectory + @"\wwwroot";
             var sourcePath = Path.GetTempFileName();
             if (file.Length > 0)
@@ -15,32 +17,83 @@ namespace Backbone.Utilities.Helpers
                 using (var stream = new FileStream(sourcePath, FileMode.Create))
                 {
                     file.CopyTo(stream);
+
                 }
+
             }
 
-            var result = NewPath(file); // *
-            File.Move(sourcePath, path + result); // *
+            var result = NewPath(file);
+            File.Move(sourcePath, path + result);
+
+            //string path = Environment.CurrentDirectory + @"\wwwroot";
+            //var sourcePath = Path.GetTempFileName();
+            //if (file.Length > 0)
+            //{
+            //    using (var stream = new FileStream(sourcePath, FileMode.Create))
+            //    {
+            //        file.CopyTo(stream);
+            //    }
+            //}
+
+            //var result = NewPath(file); // *
+            //File.Move(sourcePath, path + result); // *
             return result.Replace("\\", "/");
         }
 
+
+
+
         public string Update(string sourcePath, IFormFile file)
         {
-            throw new NotImplementedException();
+            string path = Environment.CurrentDirectory + @"\wwwroot";
+            var result = NewPath(file);
+            if (sourcePath.Length > 0)
+            {
+                using (var stream = new FileStream(path + result, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+
+                }
+            }
+
+            File.Delete(path + sourcePath);
+            return result.Replace("\\", "/");
         }
 
-        public string Delete(string path)
+        public IResult Delete(string afterpath)
         {
-            throw new NotImplementedException();
+            string path2 = Environment.CurrentDirectory + @"\wwwroot";
+            afterpath = afterpath.Replace("/", "\\");
+            try
+            {
+                File.Delete(path2 + afterpath);
+            }
+            catch (Exception e)
+            {
+                return new ErrorResult(e.Message);
+
+            }
+
+            return new SuccessResult();
         }
 
         public static string NewPath(IFormFile formFile)
         {
-            FileInfo fileInfo = new FileInfo(formFile.FileName);
-            string fileExtension = fileInfo.Extension;
+            FileInfo ff = new FileInfo(formFile.FileName);
+            string extension = ff.Extension;
 
-            var newpath = Guid.NewGuid().ToString() + fileExtension;
+            var newPath = new Guid().ToString() + extension;
 
-            return @"\Images\" + newpath;
+            return @"\Images" + newPath;
+
+
+
+            //FileInfo fileInfo = new FileInfo(formFile.FileName);
+            //string fileExtension = fileInfo.Extension;
+
+            //var newpath = Guid.NewGuid().ToString() + fileExtension;
+
+            //return @"\Images\" + newpath;
         }
     }
 }

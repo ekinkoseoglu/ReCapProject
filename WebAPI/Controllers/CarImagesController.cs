@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
@@ -6,6 +7,12 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CarImagesController : ControllerBase
     {
-        
+        private ICarImageService _carImageService;
+
+        public CarImagesController(ICarImageService carImageService)
+        {
+            _carImageService = carImageService;
+        }
+
     }
 }

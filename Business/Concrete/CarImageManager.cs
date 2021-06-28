@@ -1,6 +1,8 @@
-﻿using Backbone.Utilities.Helpers;
+﻿using Backbone.Aspects.Autofac.Validation;
+using Backbone.Utilities.Helpers;
 using Backbone.Utilities.Results;
 using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
@@ -20,7 +22,7 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
             _fileHelper = fileHelper;
         }
-
+        [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
         {
             carImage.ImagePath = _fileHelper.Add(file);
@@ -86,5 +88,16 @@ namespace Business.Concrete
             return new List<CarImage>(carImages);
 
         }
+
+        //private IResult CarImageLimit(int carId)
+        //{
+        //    var carImages = _carImageDal.GetAll(c => c.CarId == carId).Count;
+        //    if (carImages>5)
+        //    {
+        //        return new ErrorResult("Mevcut Arabaya en fazla 5 görsel ekleyebilirsiniz.");
+        //    }
+
+        //    return new SuccessResult();
+        //}
     }
 }

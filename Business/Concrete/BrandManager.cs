@@ -1,14 +1,13 @@
 ﻿
+using Backbone.Aspects.Autofac.Validation;
+using Backbone.Utilities.Results;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using Backbone.Aspects.Autofac.Validation;
-using Backbone.CrossCuttingConcerns.Validation;
-using Backbone.Utilities.Results;
-using Business.ValidationRules.FluentValidation;
 
 
 namespace Business.Concrete
@@ -38,8 +37,8 @@ namespace Business.Concrete
         [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Brand entity)
         {
-           
-            
+
+
 
             _brandDal.Add(entity);
             return new SuccessResult(Messages.ProductAdded);

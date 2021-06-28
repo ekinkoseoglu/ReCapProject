@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Backbone.Utilities.Business;
 
 namespace Business.Concrete
 {
@@ -25,6 +26,16 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
         {
+
+            IResult result = BusinessRules.Run(CarImageLimit(carImage.CarId));
+
+
+            if (result!=null)
+            {
+                return result;
+            }
+
+
             carImage.ImagePath = _fileHelper.Add(file);
             carImage.Date = DateTime.Now;
             _carImageDal.Add(carImage);
@@ -58,12 +69,15 @@ namespace Business.Concrete
 
         public IDataResult<List<CarImage>> GetByCarId(int carId)
         {
+
             return new SuccessDataResult<List<CarImage>>(ShowDefaulImage(carId));
         }
 
 
 
-        /*-------------------------------------------------------------------------------*/
+
+
+        /*--------------------------------BUSINESS RULES------------------------------------*/
 
 
 
@@ -89,15 +103,15 @@ namespace Business.Concrete
 
         }
 
-        //private IResult CarImageLimit(int carId)
-        //{
-        //    var carImages = _carImageDal.GetAll(c => c.CarId == carId).Count;
-        //    if (carImages>5)
-        //    {
-        //        return new ErrorResult("Mevcut Arabaya en fazla 5 görsel ekleyebilirsiniz.");
-        //    }
+        private IResult CarImageLimit(int carId)
+        {
+            var carImages = _carImageDal.GetAll(c => c.CarId == carId).Count;
+            if (carImages >= 5)
+            {
+                return new ErrorResult("Mevcut Arabaya en fazla 5 görsel ekleyebilirsiniz.");
+            }
 
-        //    return new SuccessResult();
-        //}
+            return new SuccessResult();
+        }
     }
 }

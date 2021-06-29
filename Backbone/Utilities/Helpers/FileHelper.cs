@@ -82,9 +82,9 @@ namespace Backbone.Utilities.Helpers
             FileInfo ff = new FileInfo(formFile.FileName);
             string extension = ff.Extension;
 
-            var newPath = new Guid().ToString() + extension;
+            var newPath = Guid.NewGuid().ToString() + extension;
 
-            return @"\Images" + newPath;
+            return @"\Images\" + newPath;
 
 
 

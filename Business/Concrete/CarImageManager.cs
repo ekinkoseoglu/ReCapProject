@@ -1,15 +1,13 @@
-﻿using Backbone.Aspects.Autofac.Validation;
+﻿using Backbone.Utilities.Business;
 using Backbone.Utilities.Helpers;
 using Backbone.Utilities.Results;
 using Business.Abstract;
-using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Backbone.Utilities.Business;
 
 namespace Business.Concrete
 {
@@ -23,14 +21,14 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
             _fileHelper = fileHelper;
         }
-        [ValidationAspect(typeof(CarImageValidator))]
+
         public IResult Add(IFormFile file, CarImage carImage)
         {
 
             IResult result = BusinessRules.Run(CarImageLimit(carImage.CarId));
 
 
-            if (result!=null)
+            if (result != null)
             {
                 return result;
             }

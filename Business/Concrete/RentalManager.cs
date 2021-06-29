@@ -76,10 +76,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Rental>> GetAll()
         {
-            if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
-            {
-                return new ErrorDataResult<List<Rental>>(Messages.MaintenanceTime);
-            }
+            
 
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), "Rental Listed");
         }

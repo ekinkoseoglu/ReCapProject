@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Backbone.Utilities.Results;
+﻿using Backbone.Utilities.Results;
 
 namespace Backbone.Utilities.Business
 {
@@ -17,7 +12,6 @@ namespace Backbone.Utilities.Business
                 {
                     return logic;
                 }
-
             }
 
             return null;

@@ -70,7 +70,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
+        [HttpDelete("delete")]
         public IActionResult Delete([FromForm] int id)
         {
             var ImageId = _carImageService.GetByImageId(id).Data;

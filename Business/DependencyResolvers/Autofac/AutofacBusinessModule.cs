@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extras.DynamicProxy;
+using Backbone.Utilities.Helpers;
 using Backbone.Utilities.Interceptors;
 using Business.Abstract;
 using Business.Concrete;
@@ -33,6 +34,8 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
             builder.RegisterType<EfCarImageDal>().As<ICarImageDal>().SingleInstance();
+
+            builder.RegisterType<FileHelper>().As<IFileHelper>().SingleInstance();
 
 
             /*  Yukarıdaki bütün sınıflar için önce burada Aspectleri var mı ? diye kontrol ediyor  */

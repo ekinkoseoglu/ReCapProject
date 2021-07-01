@@ -102,5 +102,8 @@ namespace Business.Concrete
             _carDal.Update(entity);
             return new SuccessResult(Messages.ProductUpdated);
         }
+        /* ----------------------BUSINESS RULES-------------------------------*/
+
+
     }
 }

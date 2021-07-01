@@ -8,6 +8,8 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Backbone.Utilities.Business;
 
 
 namespace Business.Concrete
@@ -38,7 +40,12 @@ namespace Business.Concrete
         public IResult Add(Brand entity)
         {
 
+            var result = BusinessRules.Run(CheckBrand(entity.BrandName));
 
+            if (result!=null)
+            {
+                return result;
+            }
 
             _brandDal.Add(entity);
             return new SuccessResult(Messages.ProductAdded);
@@ -71,6 +78,23 @@ namespace Business.Concrete
             }
 
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.ProductListed);
+        }
+
+
+
+
+        /* ----------------------BUSINESS RULES-------------------------------*/
+
+
+        private IResult CheckBrand(string brandName)
+        {
+            var result = _brandDal.GetAll(b => b.BrandName == brandName).Any();
+            if (result)
+            {
+                return new ErrorResult("Mevcut Marka Mevcuttur.");
+            }
+
+            return new SuccessResult();
         }
     }
 }

@@ -7,7 +7,9 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Backbone.Aspects.Autofac.Validation;
+using Backbone.Utilities.Business;
 using Backbone.Utilities.Results;
 
 namespace Business.Concrete
@@ -36,7 +38,12 @@ namespace Business.Concrete
         [ValidationAspect(typeof(UserValidator))]
         public IResult Add(User entity)
         {
-            
+            var result = BusinessRules.Run(CheckEMail(entity.Email));
+
+            if (result!=null)
+            {
+                return result;
+            }
 
             _userDal.Add(entity);
             return new SuccessResult("User Added");
@@ -71,5 +78,25 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), "Listed All Users");
         }
+
+
+
+
+        /* ----------------------BUSINESS RULES-------------------------------*/
+
+
+
+        private IResult CheckEMail(string email)
+        {
+            var emailCheck = _userDal.GetAll(u => u.Email == email).Any();
+            if (emailCheck)
+            {
+                return new ErrorResult("Bu Mail Adresi Zaten Mevcut");
+            }
+
+            return new SuccessResult();
+        }
+
+
     }
 }

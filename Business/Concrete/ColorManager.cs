@@ -7,6 +7,8 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Backbone.Utilities.Business;
 
 namespace Business.Concrete
 {
@@ -35,7 +37,11 @@ namespace Business.Concrete
         [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color entity)
         {
-
+           IResult result = BusinessRules.Run(ColorExist(entity.ColorName));
+            if (result!=null)
+            {
+                return result;
+            }
 
 
             _colorDal.Add(entity);
@@ -68,6 +74,22 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);
             }
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ProductListed);
+        }
+
+
+
+        /* ----------------------BUSINESS RULES-------------------------------*/
+
+
+        private IResult ColorExist(string colorName)
+        {
+            var color = _colorDal.GetAll(c=>c.ColorName==colorName).Any();
+            if (color)
+            {
+                return new ErrorResult("Mevcut Renk Zaten Mevcut !");
+            }
+
+            return new SuccessResult();
         }
     }
 }

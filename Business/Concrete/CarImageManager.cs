@@ -1,7 +1,9 @@
-﻿using Backbone.Utilities.Business;
+﻿using Backbone.Aspects.Autofac.Validation;
+using Backbone.Utilities.Business;
 using Backbone.Utilities.Helpers;
 using Backbone.Utilities.Results;
 using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
@@ -21,7 +23,7 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
             _fileHelper = fileHelper;
         }
-
+        [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
         {
 
@@ -67,6 +69,11 @@ namespace Business.Concrete
 
         public IDataResult<List<CarImage>> GetByCarId(int carId)
         {
+            var result = BusinessRules.Run(CarIdExist(carId));
+            if (result != null)
+            {
+                return new ErrorDataResult<List<CarImage>>(result.Message);
+            }
 
             return new SuccessDataResult<List<CarImage>>(ShowDefaulImage(carId));
         }
@@ -80,12 +87,24 @@ namespace Business.Concrete
 
 
 
+        private IDataResult<List<CarImage>> CarIdExist(int carId)
+        {
+            var result = _carImageDal.GetAll(c => c.CarId == carId).Any();
 
+            if (!result)
+            {
+                return new ErrorDataResult<List<CarImage>>("Mevcut Arabanın Id'sini Yazmak Zorundasınız");
+            }
+
+            return new SuccessDataResult<List<CarImage>>();
+
+        }
 
 
         private List<CarImage> ShowDefaulImage(int carId)
         {
-            string path = @"C:\Users\ekind\Desktop\RentACarLogo\logo2.jpg";
+            string path = @"C:\Users\ekind\Desktop\RentACarLogo\logo2.jpg".Replace("\\", "/");
+
             var result = _carImageDal.GetAll(c => c.CarId == carId).Any(); // Datadan girilen CarId ile uyuşan CarImage var mı kontrol et  
 
             if (result) // Eğer Car Id'si ile uyumlu bir Image ya da Imageler varsa onları göster

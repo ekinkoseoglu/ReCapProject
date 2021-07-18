@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fkY8bWl1a0dtriunD9ODQz5Q4wVYVsa1L0PyFG8PqP1IsCoAikYTaq8Hry2brudETw0vz1Cm8JnXSvN/Y/T1cQ==",
+  "dgSpecHash": "2cVyTa6cxLMo//djGRBZf++YIJBo0SFlSMhnySYk4PtUOkGESqGHw82OO728JWgNC6GI1JvC1/AaF1olTYqFbg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Business\\Business.csproj",
   "expectedPackageFiles": [
@@ -23,7 +23,9 @@
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.5\\microsoft.entityframeworkcore.sqlserver.5.0.5.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.configuration\\2.2.0\\microsoft.extensions.configuration.2.2.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",

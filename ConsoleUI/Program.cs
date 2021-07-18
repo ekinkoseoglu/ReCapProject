@@ -137,10 +137,10 @@ namespace ConsoleUI
             UserManager efUserManager = new UserManager(new EfUserDal());
 
             // efUserManager.Add(new User { FirstName = "Engin", LastName = "Demiroğ", UserPassword = "123456", Email = "engindemirog@gmail.com" }); // Yeni bir User Ekliyorum
-            foreach (var x in efUserManager.GetAll().Data)
-            {
-                Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
-            }
+            //foreach (var x in efUserManager.GetAll().Data)
+            //{
+            //    Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
+            //}
 
             Console.WriteLine("------");
             CustomerManager efCustomerManager = new CustomerManager(new EfCustomerDal());
@@ -158,10 +158,10 @@ namespace ConsoleUI
             //}
 
 
-            foreach (var x in efUserManager.GetAll().Data)
-            {
-                Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
-            }
+            //foreach (var x in efUserManager.GetAll().Data)
+            //{
+            //    Console.WriteLine(x.UserId + "--" + x.FirstName + "--" + x.LastName + "--" + x.UserPassword + "--" + x.Email);
+            //}
 
             var time2 = "10 / 1 / 2008";
             DateTime RentalDate = DateTime.Parse(time2);

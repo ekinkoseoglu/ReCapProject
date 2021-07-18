@@ -1,5 +1,6 @@
-﻿using Backbone.CrossCuttingConcerns.Validation;
-using Backbone.Utilities;
+﻿using Backbone.Aspects.Autofac.Validation;
+using Backbone.Utilities.Business;
+using Backbone.Utilities.Results;
 using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
@@ -8,9 +9,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Backbone.Aspects.Autofac.Validation;
-using Backbone.Utilities.Business;
-using Backbone.Utilities.Results;
+using Backbone.Entities.Concrete;
 
 namespace Business.Concrete
 {
@@ -40,7 +39,7 @@ namespace Business.Concrete
         {
             var result = BusinessRules.Run(CheckEMail(entity.Email));
 
-            if (result!=null)
+            if (result != null)
             {
                 return result;
             }
@@ -79,7 +78,18 @@ namespace Business.Concrete
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), "Listed All Users");
         }
 
+        public IDataResult<List<OperationClaim>> GetClaims(User user)
+        {
+            var result = _userDal.GetClaims(user);
+            return new SuccessDataResult<List<OperationClaim>>(result);
+        }
 
+        public IDataResult<User> GetByMail(string email)
+        {
+            var result = _userDal.Get(u => u.Email == email);
+
+            return new SuccessDataResult<User>(result);
+        }
 
 
         /* ----------------------BUSINESS RULES-------------------------------*/

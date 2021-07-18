@@ -2,6 +2,7 @@
 using Autofac.Extras.DynamicProxy;
 using Backbone.Utilities.Helpers;
 using Backbone.Utilities.Interceptors;
+using Backbone.Utilities.Security.JWT;
 using Business.Abstract;
 using Business.Concrete;
 using Castle.DynamicProxy;
@@ -31,6 +32,10 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
+
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
+
+
 
             builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
             builder.RegisterType<EfCarImageDal>().As<ICarImageDal>().SingleInstance();

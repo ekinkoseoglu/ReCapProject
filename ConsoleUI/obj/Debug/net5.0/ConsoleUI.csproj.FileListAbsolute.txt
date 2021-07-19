@@ -151,3 +151,5 @@ C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsof
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Net.Http.Headers.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Extensions.Configuration.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\ConsoleUI\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll

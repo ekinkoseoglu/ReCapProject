@@ -1,15 +1,14 @@
 ﻿using Backbone.Aspects.Autofac.Validation;
+using Backbone.Entities.Concrete;
 using Backbone.Utilities.Business;
 using Backbone.Utilities.Results;
 using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
-using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Backbone.Entities.Concrete;
 
 namespace Business.Concrete
 {
@@ -78,17 +77,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), "Listed All Users");
         }
 
-        public IDataResult<List<OperationClaim>> GetClaims(User user)
+        public List<OperationClaim> GetClaims(User user)
         {
-            var result = _userDal.GetClaims(user);
-            return new SuccessDataResult<List<OperationClaim>>(result);
+            return _userDal.GetClaims(user);
         }
 
-        public IDataResult<User> GetByMail(string email)
+        public User GetByMail(string email)
         {
-            var result = _userDal.Get(u => u.Email == email);
-
-            return new SuccessDataResult<User>(result);
+            return _userDal.Get(u => u.Email == email);
         }
 
 

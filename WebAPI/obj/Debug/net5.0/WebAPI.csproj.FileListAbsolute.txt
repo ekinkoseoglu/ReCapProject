@@ -20,7 +20,6 @@ C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Microsoft.I
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -70,3 +69,4 @@ C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Autofac.Ext
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Autofac.Extras.DynamicProxy.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\ekind\Documents\GitHub\ReCapProject\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

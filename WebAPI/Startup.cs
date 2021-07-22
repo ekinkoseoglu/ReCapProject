@@ -1,3 +1,4 @@
+using Backbone.Utilities.IoC;
 using Backbone.Utilities.Security.Encryption;
 using Backbone.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -30,7 +31,7 @@ namespace WebAPI
             {
                 options.AddPolicy("AllowOrigin", builder => builder.WithOrigins("https://localhost:44391"));
             });
-
+           
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>(); 
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -47,6 +48,9 @@ namespace WebAPI
                      
                 };
             });
+
+            ServiceTool.Create(services);
+
             //services.AddSingleton<ICarService, CarManager>();
             //services.AddSingleton<ICarDal, EfCarDal>();
             //services.AddSingleton<IBrandService, BrandManager>();

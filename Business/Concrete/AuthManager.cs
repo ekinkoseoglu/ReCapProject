@@ -1,9 +1,11 @@
-﻿using Backbone.Entities.Concrete;
+﻿using Backbone.Aspects.Autofac.Validation;
+using Backbone.Entities.Concrete;
 using Backbone.Utilities.Results;
 using Backbone.Utilities.Security.Hashing;
 using Backbone.Utilities.Security.JWT;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
 using Entities.DTOs;
 
 namespace Business.Concrete
@@ -18,6 +20,7 @@ namespace Business.Concrete
             _tokenHelper = tokenHelper;
         }
 
+        [ValidationAspect(typeof(UserForRegisterDtoValidator))]
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto)
         {
             //var result = UserExist(userForRegisterDto.Email);
@@ -63,7 +66,7 @@ namespace Business.Concrete
         {
             if (_userService.GetByMail(email) != null)
             {
-                return new ErrorResult("Kullanıcı mevcut");
+                return new ErrorResult(Messages.UserAlreadyExists);
             }
             return new SuccessResult();
         }

@@ -8,24 +8,7 @@ namespace Business.ValidationRules.FluentValidation
     {
         public UserValidator()
         {
-            RuleFor(u => u.FirstName)
-                .Cascade(CascadeMode.Stop)
-                .NotEmpty()
-                .MinimumLength(2);
-
-
-            RuleFor(u => u.LastName)
-                .Cascade(CascadeMode.Stop)
-                .NotEmpty()
-                .MinimumLength(2);
-
-
-            RuleFor(u => u.Email)
-                .Cascade(CascadeMode.Stop)
-                .NotEmpty()
-                .Must(Contain).WithMessage("Your Mail address must Contain '@' character")
-                .EmailAddress();
-
+            
 
             //RuleFor(u => u.UserPassword)
             //    .Cascade(CascadeMode.Continue)
@@ -36,15 +19,7 @@ namespace Business.ValidationRules.FluentValidation
 
         }
 
-        private bool Contain(string arg)
-        {
-            if (arg.Contains("@"))
-            {
-                return true;
-            }
-
-            return false;
-        }
+       
 
     }
 }

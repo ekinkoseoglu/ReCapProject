@@ -8,6 +8,7 @@ using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using Business.BusinessAspects.Autofac;
 
 namespace Business.Concrete
 {
@@ -83,6 +84,7 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max), Messages.ProductListed);
         }
+        [SecuredOperation("Car.List,admin")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car entity)
         {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cRh3kIaBrkrOiXXPAA1fFOGTAq8AIcThF5B+QJuBRYRcKmLcdyz/szvb/FSS8do6/ULZ6vVZ5sxpbthKAi6HIg==",
+  "dgSpecHash": "3qoieg9uUOjtF71b41SHL67JtTNPXwbyPP2aszqhx4gfYsN62EJpz9nq/dBnyMI7vNa7BG5BL40qdinv6DA9UA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -28,7 +28,7 @@
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.configuration\\2.2.0\\microsoft.extensions.configuration.2.2.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
-    "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",

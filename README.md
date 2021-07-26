@@ -1,17 +1,21 @@
 # ReCapProject
-Simulation of Renting Car System by using and optimizing my "Backbone" Layer. 
 
-"Backbone" Layer can applicable for many projects
-
-:white_check_mark: Users can rent any vehicle they want to use.
+It is the backend project provides car rental service. This project strictly implements the OOP, SOLID and AOP principles. An objective approach was followed throughout the project. The project also has unit testing. In addition to the backend project, the frontend part with Angular continues to be developed.
 <p>
-:x: If the vehicle is already rented, they cannot use this option.
-<p>
-:white_check_mark: New User can register in the system.
-<p>
-:white_check_mark: New Car can register in the system.
-<p>
-:white_check_mark: Used "FluentValidation" to optimize Validation rules.
-
-
+Used Technologies And Principles
+ASP.NET Core 5.0
+Layered Architecture (Core, Entity, DataAccess, Business, API and Test Layers)
+MSTest, Moq (Unit Testing)
+SQL Server 2019
+Entity Framework Core 5
+Generic Repository Pattern / Unit of Work Pattern / Adapter Pattern
+RESTful API
+OOP, AOP, SOLID
+JWT (JSON Web Token)
+Password Hashing / Salting
+Redis / InMemory Cache (As alternative to each other)
+IoC
+Autofac
+FluentValidation
+Database Script
 

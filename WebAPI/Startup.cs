@@ -2,7 +2,6 @@ using Backbone.Utilities.IoC;
 using Backbone.Utilities.Security.Encryption;
 using Backbone.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -31,8 +30,8 @@ namespace WebAPI
             {
                 options.AddPolicy("AllowOrigin", builder => builder.WithOrigins("https://localhost:44391"));
             });
-           
-            var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>(); 
+
+            var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
@@ -45,7 +44,7 @@ namespace WebAPI
                     ValidAudience = tokenOptions.Audience,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
-                     
+
                 };
             });
 
@@ -87,7 +86,7 @@ namespace WebAPI
             app.UseAuthentication();
 
             app.UseAuthorization();
-            
+
 
             app.UseEndpoints(endpoints =>
             {

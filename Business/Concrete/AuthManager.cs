@@ -14,6 +14,7 @@ namespace Business.Concrete
     {
         private IUserService _userService; // We have to initialize the user from db 
         private ITokenHelper _tokenHelper;
+
         public AuthManager(IUserService userService, ITokenHelper tokenHelper)
         {
             _userService = userService;

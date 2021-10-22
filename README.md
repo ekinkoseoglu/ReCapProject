@@ -5,8 +5,7 @@ In addition to the backend project, the frontend part with Angular continues to 
 
 ### Used Technologies And Principles
 - ASP.NET Core 5.0
-- Layered Architecture (Core, Entity, DataAccess, Business, API and Test Layers)
-- MSTest, Moq (Unit Testing)
+- Layered Architecture (Core, Entity, DataAccess, Business, API Layers)
 - SQL Server 2019
 - Entity Framework Core 5
 - Generic Repository Pattern / Unit of Work Pattern / Adapter Pattern

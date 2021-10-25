@@ -28,7 +28,7 @@ namespace Backbone.Utilities.Security.JWT
 
             // var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenOptions.SecurityKey));
             var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
-            var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
+            var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey); // First we had created instance of security key from our Helper, then we are defining this as parameter for SigningCredential
 
 
             var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaims);

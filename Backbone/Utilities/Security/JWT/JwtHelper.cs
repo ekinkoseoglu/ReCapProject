@@ -37,7 +37,7 @@ namespace Backbone.Utilities.Security.JWT
 
             return new AccessToken
             {
-                Token = token, // Token that we has written above
+                Token = token, // JWT that we have written above 
                 Expiration = _accessTokenExpiration
             };
         }

@@ -1,3 +1,5 @@
+using Backbone.DependencyResolvers;
+using Backbone.Extensions;
 using Backbone.Utilities.IoC;
 using Backbone.Utilities.Security.Encryption;
 using Backbone.Utilities.Security.JWT;
@@ -48,7 +50,10 @@ namespace WebAPI
                 };
             });
 
-            ServiceTool.Create(services);
+            services.AddDependencyResolvers(new ICoreModule[]
+            {
+                new CoreModule()
+            });
 
             //services.AddSingleton<ICarService, CarManager>();
             //services.AddSingleton<ICarDal, EfCarDal>();
@@ -84,10 +89,9 @@ namespace WebAPI
             app.UseRouting();
 
             app.UseAuthentication();
-
             app.UseAuthorization();
-
-
+            
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

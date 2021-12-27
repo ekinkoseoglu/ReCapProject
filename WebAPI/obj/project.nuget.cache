@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3qoieg9uUOjtF71b41SHL67JtTNPXwbyPP2aszqhx4gfYsN62EJpz9nq/dBnyMI7vNa7BG5BL40qdinv6DA9UA==",
+  "dgSpecHash": "Ww4IirZEwHSNa/1DvC7sRrYsxLPULB4oC8ZqsehEo9R3xJSFDo1GktHqo1mHdkIURtCfk3C5JYbth+mv8oRBZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ekind\\.nuget\\packages\\autofac\\6.2.0\\autofac.6.2.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

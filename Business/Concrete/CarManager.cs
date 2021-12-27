@@ -8,6 +8,7 @@ using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Caching;
 using Business.BusinessAspects.Autofac;
 
 namespace Business.Concrete
@@ -28,7 +29,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }
-            var deletedcar = _carDal.Get(p => p.CarId == id);
+            var deletedcar = _carDal.Get(p => p.Id == id);
             _carDal.Delete(deletedcar);
             return new SuccessResult(Messages.ProductDeleted);
         }
@@ -42,7 +43,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<Car>(Messages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<Car>(_carDal.Get(p => p.CarId == id), Messages.ProductShown);
+            return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == id), Messages.ProductShown);
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()
@@ -55,6 +56,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.ProductListed);
         }
 
+        [CacheAspect]
         public IDataResult<List<Car>> GetAll()
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)

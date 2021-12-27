@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Business\\Business.csproj": {}
+    "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Business\\Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\Backbone.csproj": {
+    "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Backbone\\Backbone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\Backbone.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Backbone\\Backbone.csproj",
         "projectName": "Backbone",
-        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\Backbone.csproj",
+        "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Backbone\\Backbone.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Backbone\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,21 +100,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Business\\Business.csproj": {
+    "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Business\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Business\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,8 +132,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -184,21 +192,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -212,11 +224,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\Backbone.csproj": {
-                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\Backbone.csproj"
+              "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Backbone\\Backbone.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Backbone\\Backbone.csproj"
               },
-              "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Entities\\Entities.csproj"
+              "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -251,21 +263,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Entities\\Entities.csproj": {
+    "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\ekind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\ekind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -279,8 +295,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\Backbone.csproj": {
-                "projectPath": "C:\\Users\\ekind\\Documents\\GitHub\\ReCapProject\\Backbone\\Backbone.csproj"
+              "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Backbone\\Backbone.csproj": {
+                "projectPath": "C:\\Users\\ekind\\Desktop\\C#\\ReCapProject\\Backbone\\Backbone.csproj"
               }
             }
           }
@@ -309,7 +325,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

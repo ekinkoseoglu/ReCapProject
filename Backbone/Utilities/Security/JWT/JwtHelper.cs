@@ -60,7 +60,7 @@ namespace Backbone.Utilities.Security.JWT
         {
             var claims = new List<Claim>();
             // claims.Add(new Claim("email", user.Email));
-            claims.AddNameIdentifier(user.UserId.ToString());
+            claims.AddNameIdentifier(user.Id.ToString());
             claims.AddEmail(user.Email);
             claims.AddName($"{user.FirstName} {user.LastName}");
             claims.AddRoles(operationClaims.Select(c => c.Name).ToArray());

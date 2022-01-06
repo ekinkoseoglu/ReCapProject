@@ -10,8 +10,6 @@ namespace Backbone.CrossCuttingConcerns.Caching
 {
     public interface ICacheManager
     {
-        SqlTransaction BeginTransaction();
-       TransactionScope
 
         T Get<T>(string key);
         object Get(string key);

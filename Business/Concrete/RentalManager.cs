@@ -7,6 +7,7 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Caching;
 
 namespace Business.Concrete
 {
@@ -19,6 +20,8 @@ namespace Business.Concrete
             _rentalDal = rentalDal;
         } // ctrl M M
 
+
+        [CacheRemoveAspect("IRentalService.Get")]
         public IResult Delete(int id)
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
@@ -31,6 +34,8 @@ namespace Business.Concrete
             return new SuccessResult("Rental Deleted");
         }
 
+
+        [CacheRemoveAspect("IRentalService.Get")]
         [ValidationAspect(typeof(RentalValidator))]
         public IResult Add(Rental entity)
         {
@@ -53,6 +58,7 @@ namespace Business.Concrete
 
         }
 
+        [CacheRemoveAspect("IRentalService.Get")]
         public IResult Update(Rental entity)
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
@@ -63,6 +69,9 @@ namespace Business.Concrete
             return new SuccessResult("Rental Updated");
         }
 
+
+
+        [CacheAspect()]
         public IDataResult<Rental> Get(int id)
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
@@ -74,6 +83,9 @@ namespace Business.Concrete
             return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.RentalId == id), "Rental Has Shown");
         }
 
+
+
+        [CacheAspect()]
         public IDataResult<List<Rental>> GetAll()
         {
             

@@ -30,7 +30,12 @@
       "ProjectGuid": "3a7c761f-75dc-43fe-954f-a8087382d4fe",
       "DisplayName": "Business",
       "ColorIndex": 4
+    },
+    "4494f956-628e-4051-bdb8-e8e8a2a1a6dc": {
+      "ProjectGuid": "4494f956-628e-4051-bdb8-e8e8a2a1a6dc",
+      "DisplayName": "ConsoleUI",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }

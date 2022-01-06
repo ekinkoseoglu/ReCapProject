@@ -22,7 +22,7 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
-
+        [CacheRemoveAspect("ICarService.Get")]
         public IResult Delete(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -35,7 +35,7 @@ namespace Business.Concrete
         }
 
 
-
+        [CacheAspect()]
         public IDataResult<Car> Get(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -45,7 +45,7 @@ namespace Business.Concrete
 
             return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == id), Messages.ProductShown);
         }
-
+        [CacheAspect()]
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -66,7 +66,7 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.ProductListed);
         }
-
+        [CacheAspect()]
         public IDataResult<List<Car>> GetAllByColorId(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -76,7 +76,8 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.ColorId == id), Messages.ProductListed);
         }
-
+        
+        [CacheAspect()]
         public IDataResult<List<Car>> GetAllByPrice(int min, int max)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -86,6 +87,7 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max), Messages.ProductListed);
         }
+        [CacheRemoveAspect("ICarService.Get")]
         [SecuredOperation("Car.List,admin")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car entity)
@@ -96,7 +98,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductAdded);
 
         }
-
+        [CacheRemoveAspect("ICarService.Get")]
         public IResult Update(Car entity)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)

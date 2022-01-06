@@ -120,9 +120,9 @@ namespace ConsoleUI
 
 
 
-            var result5 = efCarManager.Get(6); // Id Numarası 6 olan Car'ı getir ve ekrana mesajını yazdır
-            Console.WriteLine(result5.Data.Details);
-            Console.WriteLine(result5.Message);
+            //var result5 = efCarManager.Get(6); // Id Numarası 6 olan Car'ı getir ve ekrana mesajını yazdır
+            //Console.WriteLine(result5.Data.Details);
+            //Console.WriteLine(result5.Message);
 
 
             Console.WriteLine("--------");

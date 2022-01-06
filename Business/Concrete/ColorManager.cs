@@ -8,6 +8,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Backbone.Aspects.Autofac.Caching;
 using Backbone.Utilities.Business;
 
 namespace Business.Concrete
@@ -22,22 +23,25 @@ namespace Business.Concrete
             _colorDal = colorDal;
         }
 
+
+        [CacheRemoveAspect("IColorService.Get")]
         public IResult Delete(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }
-            var deletedColor = _colorDal.Get(c => c.ColorId == id);
+            var deletedColor = _colorDal.Get(c => c.Id == id);
             _colorDal.Delete(deletedColor);
             return new SuccessResult(Messages.ProductDeleted);
         }
 
 
+        [CacheRemoveAspect("IColorService.Get")]
         [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color entity)
         {
-           IResult result = BusinessRules.Run(ColorExist(entity.ColorName));
+           IResult result = BusinessRules.Run(ColorExist(entity.Name));
             if (result!=null)
             {
                 return result;
@@ -47,6 +51,8 @@ namespace Business.Concrete
             _colorDal.Add(entity);
             return new SuccessResult(Messages.ProductAdded);
         }
+
+        [CacheRemoveAspect("IColorService.Get")]
 
         public IResult Update(Color entity)
         {
@@ -64,9 +70,11 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<Color>(Messages.ProductShown);
             }
-            return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == id));
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.Id == id));
         }
+        
 
+        [CacheAspect()]
         public IDataResult<List<Color>> GetAll()
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -83,7 +91,7 @@ namespace Business.Concrete
 
         private IResult ColorExist(string colorName)
         {
-            var color = _colorDal.GetAll(c=>c.ColorName==colorName).Any();
+            var color = _colorDal.GetAll(c=>c.Name==colorName).Any();
             if (color)
             {
                 return new ErrorResult("Mevcut Renk Zaten Mevcut !");

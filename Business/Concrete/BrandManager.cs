@@ -9,6 +9,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Backbone.Aspects.Autofac.Caching;
 using Backbone.Utilities.Business;
 
 
@@ -24,6 +25,7 @@ namespace Business.Concrete
             _brandDal = brandDal;
         }
 
+        [CacheRemoveAspect("IBrandService.Get")]
         public IResult Delete(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
@@ -35,7 +37,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductDeleted);
         }
 
-
+        [CacheRemoveAspect("IBrandService.Get")]
         [ValidationAspect(typeof(BrandValidator))]
         public IResult Add(Brand entity)
         {
@@ -50,6 +52,8 @@ namespace Business.Concrete
             _brandDal.Add(entity);
             return new SuccessResult(Messages.ProductAdded);
         }
+
+        [CacheRemoveAspect("IBrandService.Get")]
 
         public IResult Update(Brand entity)
         {
@@ -70,6 +74,8 @@ namespace Business.Concrete
             return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == id), Messages.ProductShown);
         }
 
+
+        [CacheAspect()]
         public IDataResult<List<Brand>> GetAll()
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)

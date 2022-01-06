@@ -7,6 +7,7 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using Backbone.Aspects.Autofac.Caching;
 
 namespace Business.Concrete
 {
@@ -19,6 +20,7 @@ namespace Business.Concrete
             _customerDal = customerDal;
         }
 
+        [CacheRemoveAspect("ICustomerService.Get")]
         public IResult Delete(int id)
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
@@ -31,6 +33,7 @@ namespace Business.Concrete
             return new SuccessResult("Customer Deleted");
         }
 
+        [CacheRemoveAspect("ICustomerService.Get")]
         [ValidationAspect(typeof(CustomerValidator))]
         public IResult Add(Customer entity)
         {
@@ -40,6 +43,7 @@ namespace Business.Concrete
             return new SuccessResult("Customer Added");
         }
 
+        [CacheRemoveAspect("ICustomerService.Get")]
         public IResult Update(Customer entity)
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
@@ -60,6 +64,7 @@ namespace Business.Concrete
             return new ErrorDataResult<Customer>(_customerDal.Get(p => p.UserId == id), "Customer Has Shown");
         }
 
+        [CacheAspect()]
         public IDataResult<List<Customer>> GetAll()
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)

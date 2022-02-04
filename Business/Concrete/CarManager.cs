@@ -9,6 +9,7 @@ using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using Backbone.Aspects.Autofac.Caching;
+using Backbone.Aspects.Autofac.Transaction;
 using Business.BusinessAspects.Autofac;
 
 namespace Business.Concrete
@@ -110,6 +111,19 @@ namespace Business.Concrete
         }
         /* ----------------------BUSINESS RULES-------------------------------*/
 
+
+        [TransactionAspect]
+        public IResult AddTransactionalTest(Car car)
+        {
+            Add(car);
+            if (car.DailyPrice < 1000)
+            {
+                throw new Exception("");
+            }
+            Add(car);
+            return null;
+
+        }
 
     }
 }

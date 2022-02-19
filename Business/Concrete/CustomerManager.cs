@@ -28,7 +28,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.MaintenanceTime);
             }
 
-            var deletedCustomer = _customerDal.Get(c => c.UserId == id);
+            var deletedCustomer = _customerDal.Get(c => c.Id == id);
             _customerDal.Delete(deletedCustomer);
             return new SuccessResult("Customer Deleted");
         }
@@ -61,7 +61,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<Customer>(Messages.MaintenanceTime);
             }
 
-            return new ErrorDataResult<Customer>(_customerDal.Get(p => p.UserId == id), "Customer Has Shown");
+            return new ErrorDataResult<Customer>(_customerDal.Get(p => p.Id == id), "Customer Has Shown");
         }
 
         [CacheAspect()]

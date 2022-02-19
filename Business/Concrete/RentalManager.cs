@@ -80,7 +80,7 @@ namespace Business.Concrete
             }
 
 
-            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.RentalId == id), "Rental Has Shown");
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.Id == id), "Rental Has Shown");
         }
 
 

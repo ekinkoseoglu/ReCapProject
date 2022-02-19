@@ -87,7 +87,7 @@ namespace ConsoleUI
             {
                 foreach (var x in result2.Data)
                 {
-                    Console.WriteLine(x.ColorName + "--" + x.ColorId);
+                    Console.WriteLine(x.Name + "--" + x.Id);
                 }
 
                 Console.WriteLine(result2.Message);
@@ -104,7 +104,7 @@ namespace ConsoleUI
             {
                 foreach (var x in result3.Data)
                 {
-                    Console.WriteLine(x.BrandId + "--" + x.BrandName);
+                    Console.WriteLine(x.Id + "--" + x.Name);
                 }
 
                 Console.WriteLine(result3.Message);
@@ -147,7 +147,7 @@ namespace ConsoleUI
             // efCustomerManager.Add(new Customer { CompanyName = "Ford", UserId = 4 });
             foreach (var x in efCustomerManager.GetAll().Data)
             {
-                Console.WriteLine(x.UserId + "---" + x.CustomerId + "---" + x.CompanyName);
+                Console.WriteLine( x.Id + "---" + x.CompanyName);
             }
 
 
@@ -173,7 +173,7 @@ namespace ConsoleUI
 
             Console.WriteLine("------------");
             RentalManager efRentalManager = new RentalManager(new EfRentalDal());
-            var result8 = efRentalManager.Add(new Rental { CarId = 3, CustomerId = 7, RentDate = RentalDate, ReturnDate = ReturntDate });
+            var result8 = efRentalManager.Add(new Rental { CarId = 3, CustomerId = 2, RentDate = RentalDate, ReturnDate = ReturntDate });
 
 
             //Console.WriteLine(result8.Message);
@@ -181,7 +181,7 @@ namespace ConsoleUI
 
             foreach (var x in efRentalManager.GetAll().Data)
             {
-                Console.WriteLine("RentalID: "+x.RentalId + "--"+"CarID: " + x.CarId + "-- " + "CustomerID: " + x.CustomerId + "--" + " RentDate: "+x.RentDate + "--" +"ReturnDate:  "+ x.ReturnDate);
+                Console.WriteLine("RentalID: "+x.Id + "--"+"CarID: " + x.CarId + "-- " + "CustomerID: " + x.CustomerId + "--" + " RentDate: "+x.RentDate + "--" +"ReturnDate:  "+ x.ReturnDate);
 
             }
         }

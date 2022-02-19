@@ -32,7 +32,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }
-            var deletedBrand = _brandDal.Get(b => b.BrandId == id);
+            var deletedBrand = _brandDal.Get(b => b.Id == id);
             _brandDal.Delete(deletedBrand);
             return new SuccessResult(Messages.ProductDeleted);
         }
@@ -42,7 +42,7 @@ namespace Business.Concrete
         public IResult Add(Brand entity)
         {
 
-            var result = BusinessRules.Run(CheckBrand(entity.BrandName));
+            var result = BusinessRules.Run(CheckBrand(entity.Name));
 
             if (result!=null)
             {
@@ -71,7 +71,7 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<Brand>(Messages.MaintenanceTime);
             }
-            return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == id), Messages.ProductShown);
+            return new SuccessDataResult<Brand>(_brandDal.Get(b => b.Id == id), Messages.ProductShown);
         }
 
 
@@ -94,7 +94,7 @@ namespace Business.Concrete
 
         private IResult CheckBrand(string brandName)
         {
-            var result = _brandDal.GetAll(b => b.BrandName == brandName).Any();
+            var result = _brandDal.GetAll(b => b.Name == brandName).Any();
             if (result)
             {
                 return new ErrorResult("Mevcut Marka Mevcuttur.");

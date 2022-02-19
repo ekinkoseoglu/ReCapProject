@@ -89,7 +89,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max), Messages.ProductListed);
         }
         [CacheRemoveAspect("ICarService.Get")]
-        [SecuredOperation("Car.List,admin")]
+        //[SecuredOperation("Car.List,admin")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car entity)
         {

@@ -36,7 +36,7 @@ namespace Business.Concrete
             }
 
 
-            carImage.ImagePath = _fileHelper.Add(file);
+            carImage.ImageUrl = _fileHelper.Add(file);
             carImage.Date = DateTime.Now;
             _carImageDal.Add(carImage);
             return new SuccessResult();
@@ -44,7 +44,7 @@ namespace Business.Concrete
 
         public IResult Update(IFormFile file, CarImage carImage)
         {
-            carImage.ImagePath = _fileHelper.Update(_carImageDal.Get(c => c.ImageId == carImage.ImageId).ImagePath, file);
+            carImage.ImageUrl = _fileHelper.Update(_carImageDal.Get(c => c.Id == carImage.Id).ImageUrl, file);
             carImage.Date = DateTime.Now;
             _carImageDal.Update(carImage);
             return new SuccessResult();
@@ -52,7 +52,7 @@ namespace Business.Concrete
 
         public IResult Delete(CarImage carImage)
         {
-            _fileHelper.Delete(carImage.ImagePath);
+            _fileHelper.Delete(carImage.ImageUrl);
             _carImageDal.Delete(carImage);
             return new SuccessResult();
         }
@@ -62,9 +62,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
 
-        public IDataResult<CarImage> GetByImageId(int ImageId)
+        public IDataResult<CarImage> GetByImageId(int imageId)
         {
-            return new SuccessDataResult<CarImage>(_carImageDal.Get(c => c.ImageId == ImageId));
+            throw new NotImplementedException();
+        }
+
+        public IDataResult<CarImage> GetById(int Id)
+        {
+            return new SuccessDataResult<CarImage>(_carImageDal.Get(c => c.Id == Id));
         }
 
         public IDataResult<List<CarImage>> GetByCarId(int carId)
@@ -115,7 +120,7 @@ namespace Business.Concrete
 
 
             List<CarImage> carImages = new List<CarImage>(); // Girilen araba Id sinin içine Şirket logosunu kaydet ve göster
-            carImages.Add(new CarImage { CarId = carId, ImagePath = path, Date = DateTime.Now });
+            carImages.Add(new CarImage { CarId = carId, ImageUrl = path, Date = DateTime.Now });
             return new List<CarImage>(carImages);
 
         }

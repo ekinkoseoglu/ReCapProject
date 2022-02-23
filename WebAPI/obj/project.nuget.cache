@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TUaNKmQvmKK599j2P7m2gzpKqI9iHNYhEyLVtdUHq941R1HZhnrmMwVL5n+VjMHkbCbmOeQjMg5vL2VaGKhAUA==",
+  "dgSpecHash": "iQO8RtiCt8FrbuEs8waLS4s+JFyoLgLPT+dzIPZZKVH0cFZYn3WT+qPkMEtTGnsmJIY7o3pgNFQt5bKiIJ9JoQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ekind\\Desktop\\Codes\\C#\\ReCapProject\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,7 @@
     "C:\\Users\\ekind\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.0\\autofac.extras.dynamicproxy.6.0.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512",
-    "C:\\Users\\ekind\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.8\\microsoft.aspnetcore.authentication.jwtbearer.5.0.8.nupkg.sha512",
+    "C:\\Users\\ekind\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.9\\microsoft.aspnetcore.authentication.jwtbearer.5.0.9.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ekind\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",

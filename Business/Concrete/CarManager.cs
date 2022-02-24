@@ -47,15 +47,16 @@ namespace Business.Concrete
             return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == id), Messages.ProductShown);
         }
         [CacheAspect()]
-        public IDataResult<List<CarDetailDto>> GetCarDetails()
+        public IDataResult<List<CarDto>> GetCarDetails()
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
-                return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
+                return new ErrorDataResult<List<CarDto>>(Messages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.ProductListed);
+            return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(), Messages.ProductListed);
         }
+
 
         [CacheAspect]
         public IDataResult<List<Car>> GetAll()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Backbone.Utilities;
 using Backbone.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Abstract
 {
@@ -16,5 +17,6 @@ namespace Business.Abstract
         IResult Update(Rental entity);
         IDataResult<Rental> Get(int id);
         IDataResult<List<Rental>> GetAll();
+        IDataResult<List<RentalDto>> GetRentalDetails();
     }
 }

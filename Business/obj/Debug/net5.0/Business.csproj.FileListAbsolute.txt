@@ -74,3 +74,7 @@ C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Business\obj\Debug\net5.0\Business.
 C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Business\obj\Debug\net5.0\Business.dll
 C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Business\obj\Debug\net5.0\ref\Business.dll
 C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Business\obj\Debug\net5.0\Business.pdb
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Business\bin\Debug\net5.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Business\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Business\bin\Debug\net5.0\Microsoft.AspNetCore.Connections.Abstractions.xml
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Business\bin\Debug\net5.0\System.IO.Pipelines.xml

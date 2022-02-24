@@ -15,7 +15,8 @@
           "FluentValidation": "10.2.3",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.Extensions.DependencyInjection": "5.0.2"
+          "Microsoft.Extensions.DependencyInjection": "5.0.2",
+          "Microsoft.AspNetCore.Connections.Abstractions": "5.0.0.0"
         },
         "runtime": {
           "Business.dll": {}
@@ -1556,6 +1557,22 @@
         "runtime": {
           "Entities.dll": {}
         }
+      },
+      "Microsoft.AspNetCore.Connections.Abstractions/5.0.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Connections.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.52605"
+          }
+        }
+      },
+      "System.IO.Pipelines/5.0.0.0": {
+        "runtime": {
+          "System.IO.Pipelines.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
       }
     }
   },
@@ -2564,6 +2581,16 @@
     },
     "Entities/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Connections.Abstractions/5.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.IO.Pipelines/5.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

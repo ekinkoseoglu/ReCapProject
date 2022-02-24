@@ -81,5 +81,10 @@ namespace DataAccess.Concrete.InMemory
         {
             throw new NotImplementedException();
         }
-   }
+
+        public List<CarDto> GetCarDto()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

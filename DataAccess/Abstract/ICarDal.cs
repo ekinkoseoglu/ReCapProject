@@ -10,5 +10,6 @@ namespace DataAccess.Abstract
     {
 
         List<CarDetailDto> GetCarDetails();
+        List<CarDto> GetCarDto();
     }
 }

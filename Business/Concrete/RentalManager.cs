@@ -8,6 +8,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using Backbone.Aspects.Autofac.Caching;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -93,6 +94,15 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), "Rental Listed");
         }
 
+        public IDataResult<List<RentalDto>> GetRentalDetails()
+        {
+            if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 1)
+            {
+                return new ErrorDataResult<List<RentalDto>>(Messages.MaintenanceTime);
+            }
+
+            return new SuccessDataResult<List<RentalDto>>(_rentalDal.GetRentalDetails(), "Rental Details Has Listed");
+        }
     }
 
 

@@ -1,7 +1,9 @@
-﻿using Backbone.DataAccess;
+﻿using System;
+using Backbone.DataAccess;
 using Entities.Concrete;
 using Entities.DTOs;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 
 namespace DataAccess.Abstract
@@ -10,6 +12,6 @@ namespace DataAccess.Abstract
     {
 
         List<CarDetailDto> GetCarDetails();
-        List<CarDto> GetCarDto();
+        List<CarDto> GetCarDto(Expression<Func<CarDto, bool>> filter = null);
     }
 }

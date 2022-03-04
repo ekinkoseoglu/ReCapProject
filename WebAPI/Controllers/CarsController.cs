@@ -28,18 +28,9 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
+      
 
-       [HttpGet("getalldtos")]
-       public IActionResult GetDto()
-       {
-           var result = _carService.GetCarDetails();
-           if (result.Success)
-           {
-               return Ok(result);
-           }
-
-           return BadRequest(result);
-       }
+       
 
         [HttpPost("add")]
         public IActionResult Post(Car car)
@@ -65,7 +56,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getallbycolorid")]
+        [HttpGet("getallbycolor")]
         public IActionResult GetByColorId(int id)
         {
             var result = _carService.GetAllByColorId(id);
@@ -76,6 +67,66 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
+        [HttpGet("getallbybrand")]
+        // [Authorize(Roles = "Car.List")] // Authorization for listing cars
+        public IActionResult GetByBrandId(int id)
+        {
+            var result = _carService.GetAllByBrandId(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
 
+            return BadRequest(result);
+        }
+
+
+
+
+
+
+
+                            // Car DTO Controllers
+
+
+
+
+
+
+        [HttpGet("getalldtos")]
+        public IActionResult GetDto()
+        {
+            var result = _carService.GetCarDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpGet("getalldtosbycolor")]
+        public IActionResult GetByDtosByColorId(int id)
+        {
+            var result = _carService.GetAllDtosByColorId(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpGet("getalldtosbybrand")]
+        public IActionResult GetByDtosByBrandId(int id)
+        {
+            var result = _carService.GetAllDtosByBrandId(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
     }
 }

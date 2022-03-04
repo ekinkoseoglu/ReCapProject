@@ -35,7 +35,7 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public List<CarDto> GetCarDto()
+        public List<CarDto> GetCarDto(Expression<Func<CarDto, bool>> filter = null)
         {
             using (RentingCarDBContext context =new RentingCarDBContext())
             {
@@ -50,13 +50,15 @@ namespace DataAccess.Concrete.EntityFramework
                     {
                         Id = c.Id,
                         CarName = c.CarName,
+                        ColorId=col.Id,
                         ColorName = col.Name,
+                        BrandId = b.Id,
                         BrandName = b.Name,
                         DailyPrice = c.DailyPrice,
                         ModelYear = c.ModelYear,
                         Description = c.Description
                     };
-                return result.ToList();
+                return filter is null ? result.ToList() : result.Where(filter).ToList(); ;
 
             }
         }

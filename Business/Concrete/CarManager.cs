@@ -46,16 +46,7 @@ namespace Business.Concrete
 
             return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == id), Messages.ProductShown);
         }
-        [CacheAspect()]
-        public IDataResult<List<CarDto>> GetCarDetails()
-        {
-            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
-            {
-                return new ErrorDataResult<List<CarDto>>(Messages.MaintenanceTime);
-            }
-
-            return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(), Messages.ProductListed);
-        }
+       
 
 
         [CacheAspect]
@@ -76,9 +67,19 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.ColorId == id), Messages.ProductListed);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p=>p.ColorId == id), Messages.ProductListed);
         }
-        
+        [CacheAspect()]
+        public IDataResult<List<Car>> GetAllByBrandId(int id)
+        {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
+            }
+
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.BrandId == id), Messages.ProductListed);
+        }
+
         [CacheAspect()]
         public IDataResult<List<Car>> GetAllByPrice(int min, int max)
         {
@@ -89,6 +90,9 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max), Messages.ProductListed);
         }
+
+       
+
         [CacheRemoveAspect("ICarService.Get")]
         //[SecuredOperation("Car.List,admin")]
         [ValidationAspect(typeof(CarValidator))]
@@ -109,6 +113,38 @@ namespace Business.Concrete
             }
             _carDal.Update(entity);
             return new SuccessResult(Messages.ProductUpdated);
+        }
+
+        /*----------------------DTO METHODS---------------------------------*/
+
+        [CacheAspect()]
+        public IDataResult<List<CarDto>> GetCarDetails()
+        {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorDataResult<List<CarDto>>(Messages.MaintenanceTime);
+            }
+
+            return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(), Messages.ProductListed);
+        }
+        public IDataResult<List<CarDto>> GetAllDtosByColorId(int id)
+        {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorDataResult<List<CarDto>>(Messages.MaintenanceTime);
+            }
+
+            return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(p => p.ColorId == id), Messages.ProductListed);
+        }
+
+        public IDataResult<List<CarDto>> GetAllDtosByBrandId(int id)
+        {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 2)
+            {
+                return new ErrorDataResult<List<CarDto>>(Messages.MaintenanceTime);
+            }
+
+            return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(p => p.BrandId == id), Messages.ProductListed);
         }
         /* ----------------------BUSINESS RULES-------------------------------*/
 

@@ -86,11 +86,21 @@ namespace WebAPI.Controllers
 
 
 
-                            // Car DTO Controllers
+        // Car DTO Controllers
 
 
 
+        [HttpGet("getdtobyid")]
+        public IActionResult GetDtoById(int id)
+        {
+            var result = _carService.GetCarDetailsById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
 
+            return BadRequest(result);
+        }
 
 
         [HttpGet("getalldtos")]

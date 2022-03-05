@@ -24,7 +24,8 @@ namespace Backbone.Utilities.Helpers
 
             var result = NewPath(file);
             File.Move(sourcePath, path + result);
-
+            
+            return result.Replace("\\", "/");
             //string path = Environment.CurrentDirectory + @"\wwwroot";
             //var sourcePath = Path.GetTempFileName();
             //if (file.Length > 0)
@@ -37,7 +38,7 @@ namespace Backbone.Utilities.Helpers
 
             //var result = NewPath(file); // *
             //File.Move(sourcePath, path + result); // *
-            return result.Replace("\\", "/");
+            
         }
 
 

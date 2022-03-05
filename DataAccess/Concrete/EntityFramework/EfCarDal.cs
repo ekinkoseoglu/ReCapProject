@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Backbone.DataAccess.EntityFramework;
 using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -46,6 +47,7 @@ namespace DataAccess.Concrete.EntityFramework
                     join col in context.Colours
                         on c.ColorId equals col.Id
 
+                   
                     select new CarDto
                     {
                         Id = c.Id,
@@ -56,7 +58,11 @@ namespace DataAccess.Concrete.EntityFramework
                         BrandName = b.Name,
                         DailyPrice = c.DailyPrice,
                         ModelYear = c.ModelYear,
-                        Description = c.Description
+                        Description = c.Description,
+                        CarImages = (from img in context.CarImages 
+                            where (img.CarId == c.Id)
+                                     select new CarImage{ImageId = img.ImageId, ImageUrl = img.ImageUrl, CarId = c.Id, Date = img.Date}).ToList()
+
                     };
                 return filter is null ? result.ToList() : result.Where(filter).ToList(); ;
 

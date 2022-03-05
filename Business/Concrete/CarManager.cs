@@ -127,6 +127,17 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(), Messages.ProductListed);
         }
+
+        public IDataResult<List<CarDto>> GetCarDetailsById(int id)
+        {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
+            {
+                return new ErrorDataResult<List<CarDto>>(Messages.MaintenanceTime);
+            }
+
+            return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(c=>c.Id==id), Messages.ProductListed);
+        }
+
         public IDataResult<List<CarDto>> GetAllDtosByColorId(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)

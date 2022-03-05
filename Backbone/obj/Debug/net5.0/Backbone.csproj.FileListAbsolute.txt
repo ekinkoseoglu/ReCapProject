@@ -34,3 +34,15 @@ C:\Users\ekind\Desktop\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.csproj
 C:\Users\ekind\Desktop\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.dll
 C:\Users\ekind\Desktop\C#\ReCapProject\Backbone\obj\Debug\net5.0\ref\Backbone.dll
 C:\Users\ekind\Desktop\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.pdb
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\bin\Debug\net5.0\Backbone.deps.json
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\bin\Debug\net5.0\Backbone.dll
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\bin\Debug\net5.0\ref\Backbone.dll
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\bin\Debug\net5.0\Backbone.pdb
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.csproj.AssemblyReference.cache
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.AssemblyInfoInputs.cache
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.AssemblyInfo.cs
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.csproj.CoreCompileInputs.cache
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.dll
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\obj\Debug\net5.0\ref\Backbone.dll
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\Backbone\obj\Debug\net5.0\Backbone.pdb

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Backbone.Entities;
+using Entities.Concrete;
 
 namespace Entities.DTOs
 {
@@ -19,5 +20,6 @@ namespace Entities.DTOs
         public decimal DailyPrice { get; set; }
         public string Description { get; set; }
 
+        public List<CarImage> CarImages { get; set; }
     }
 }

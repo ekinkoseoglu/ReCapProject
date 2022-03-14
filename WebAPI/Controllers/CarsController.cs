@@ -88,12 +88,23 @@ namespace WebAPI.Controllers
 
         // Car DTO Controllers
 
+        [HttpGet("getdtosbybrandidcolorid")]
+        public IActionResult GetAllColorIdBrandId(int BrandId, int ColorId)
+        {
+            var result = _carService.GetAllDtosByBrandIdColorId(BrandId, ColorId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
 
 
         [HttpGet("getdtobyid")]
         public IActionResult GetDtoById(int id)
         {
-            var result = _carService.GetCarDetailsById(id);
+            var result = _carService.GetCarDtoById(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -106,7 +117,7 @@ namespace WebAPI.Controllers
         [HttpGet("getalldtos")]
         public IActionResult GetDto()
         {
-            var result = _carService.GetCarDetails();
+            var result = _carService.GetAllCarDto();
             if (result.Success)
             {
                 return Ok(result);
@@ -126,6 +137,8 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
+
+
 
         [HttpGet("getalldtosbybrand")]
         public IActionResult GetByDtosByBrandId(int id)

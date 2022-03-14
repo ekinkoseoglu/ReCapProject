@@ -21,9 +21,10 @@ namespace Business.Abstract
         IDataResult<List<Car>> GetAllByPrice(int min, int max);
 
         /*----------------------DTO METHODS---------------------------------*/
-        IDataResult<List<CarDto>> GetCarDetails();
-        IDataResult<List<CarDto>> GetCarDetailsById(int id);
+        IDataResult<List<CarDto>> GetAllCarDto();
+        IDataResult<CarDto> GetCarDtoById(int id);
         IDataResult<List<CarDto>> GetAllDtosByColorId(int id);
         IDataResult<List<CarDto>> GetAllDtosByBrandId(int id);
+        IDataResult<List<CarDto>> GetAllDtosByBrandIdColorId(int BrandId, int ColorId);
     }
 }

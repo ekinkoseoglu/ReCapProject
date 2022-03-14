@@ -17,11 +17,13 @@ namespace Business.Concrete
     {
         private ICarImageDal _carImageDal;
         private IFileHelper _fileHelper;
+        private ICarService _carService;
 
-        public CarImageManager(ICarImageDal carImageDal, IFileHelper fileHelper)
+        public CarImageManager(ICarImageDal carImageDal, IFileHelper fileHelper, ICarService carService)
         {
             _carImageDal = carImageDal;
             _fileHelper = fileHelper;
+            _carService = carService;
         }
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
@@ -83,8 +85,18 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarImage>>(ShowDefaulImage(carId));
         }
 
+        public IDataResult<List<CarImage>> GetByCarDtoId(int Id)
+        {
+            var result = BusinessRules.Run(CarIdExist(Id));
+            if (result != null)
+            {
+                return new ErrorDataResult<List<CarImage>>(result.Message);
+            }
 
+            return new SuccessDataResult<List<CarImage>>(ShowDefaulImage(Id));
+        }
 
+       
 
 
         /*--------------------------------BUSINESS RULES------------------------------------*/
@@ -92,9 +104,10 @@ namespace Business.Concrete
 
 
 
-        private IDataResult<List<CarImage>> CarIdExist(int carId)
+        private IDataResult<List<CarImage>> CarIdExist(int Id)
         {
-            var result = _carImageDal.GetAll(c => c.CarId == carId).Any();
+            var carDto = _carService.GetCarDtoById(Id);
+            var result = _carImageDal.GetAll(c =>c.CarId  == carDto.Data.Id).Any();
 
             if (!result)
             {
@@ -110,7 +123,8 @@ namespace Business.Concrete
         {
             string path = @"C:\Users\ekind\Desktop\RentACarLogo\logo2.jpg".Replace("\\", "/");
 
-            var result = _carImageDal.GetAll(c => c.CarId == carId).Any(); // Datadan girilen CarId ile uyuşan CarImage var mı kontrol et  
+            var carDto = _carService.GetCarDtoById(carId);
+            var result = _carImageDal.GetAll(c => c.CarId == carDto.Data.Id).Any(); ; // Datadan girilen CarId ile uyuşan CarImage var mı kontrol et  
 
             if (result) // Eğer Car Id'si ile uyumlu bir Image ya da Imageler varsa onları göster
             {

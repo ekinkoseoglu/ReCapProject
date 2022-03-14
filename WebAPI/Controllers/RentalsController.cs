@@ -50,6 +50,17 @@ namespace WebAPI.Controllers
 
             return BadRequest(result);
         }
+        [HttpDelete("delete")]
+        public IActionResult Delete(int id)
+        {
+            var result = _rentalService.Delete(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
 
         [HttpGet("getbyid")]
         public IActionResult Get(int id)

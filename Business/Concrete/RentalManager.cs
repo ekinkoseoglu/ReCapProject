@@ -8,6 +8,9 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using Backbone.Aspects.Autofac.Caching;
+using Backbone.Aspects.Autofac.Transaction;
+using Backbone.Utilities.Business;
+using Castle.DynamicProxy.Generators;
 using Entities.DTOs;
 
 namespace Business.Concrete
@@ -30,7 +33,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.MaintenanceTime);
             }
 
-            var deletedRental = _rentalDal.Get(r => r.CarId == id);
+            var deletedRental = _rentalDal.Get(r => r.Id == id);
             _rentalDal.Delete(deletedRental);
             return new SuccessResult("Rental Deleted");
         }
@@ -43,6 +46,9 @@ namespace Business.Concrete
 
 
             var addedRent = _rentalDal.Get(r => r.CarId == entity.CarId);
+
+            var rules = BusinessRules.Run(ControlRentDates(entity));
+
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
             {
                 return new ErrorResult(Messages.MaintenanceTime);
@@ -103,8 +109,32 @@ namespace Business.Concrete
 
             return new SuccessDataResult<List<RentalDto>>(_rentalDal.GetRentalDetails(), "Rental Details Has Listed");
         }
+
+        // ------------------------------BUSINESS RULES --------------------------
+
+        [TransactionAspect]
+        public IResult ControlRentDates(Rental rental)
+        {
+            var rentForControl = _rentalDal.Get(r=>r.Id == rental.Id);
+            int result = DateTime.Compare(rental.RentDate, rental.ReturnDate);
+            if (result > 0)
+            {
+                throw new Exception("Kiralama Süresi İade etme süresinden sonra olamaz");
+            }
+            else
+            {
+                return new SuccessResult();
+            }
+        }
     }
 
+
+
+    
+
+
+
+    
 
 
 

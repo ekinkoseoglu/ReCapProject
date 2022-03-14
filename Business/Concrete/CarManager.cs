@@ -8,6 +8,7 @@ using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Backbone.Aspects.Autofac.Caching;
 using Backbone.Aspects.Autofac.Transaction;
 using Business.BusinessAspects.Autofac;
@@ -91,7 +92,8 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max), Messages.ProductListed);
         }
 
-       
+      
+
 
         [CacheRemoveAspect("ICarService.Get")]
         //[SecuredOperation("Car.List,admin")]
@@ -118,7 +120,7 @@ namespace Business.Concrete
         /*----------------------DTO METHODS---------------------------------*/
 
         [CacheAspect()]
-        public IDataResult<List<CarDto>> GetCarDetails()
+        public IDataResult<List<CarDto>> GetAllCarDto()
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
@@ -128,14 +130,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(), Messages.ProductListed);
         }
 
-        public IDataResult<List<CarDto>> GetCarDetailsById(int id)
+        public IDataResult<CarDto> GetCarDtoById(int id)
         {
             if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
             {
-                return new ErrorDataResult<List<CarDto>>(Messages.MaintenanceTime);
+                return new ErrorDataResult<CarDto>(Messages.MaintenanceTime);
             }
 
-            return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(c=>c.Id==id), Messages.ProductListed);
+            return new SuccessDataResult<CarDto>(_carDal.GetCarDtoById(c=>c.Id==id), Messages.ProductListed);
         }
 
         public IDataResult<List<CarDto>> GetAllDtosByColorId(int id)
@@ -156,7 +158,25 @@ namespace Business.Concrete
             }
 
             return new SuccessDataResult<List<CarDto>>(_carDal.GetCarDto(p => p.BrandId == id), Messages.ProductListed);
+
         }
+
+        public IDataResult<List<CarDto>> GetAllDtosByBrandIdColorId(int BrandId, int ColorId)
+        {
+            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 2)
+            {
+                return new ErrorDataResult<List<CarDto>>(Messages.MaintenanceTime);
+            }
+
+            var brandColorFilteredDtos = _carDal.GetCarDto(c => c.BrandId == BrandId && c.ColorId == ColorId);
+            
+
+            return new SuccessDataResult<List<CarDto>>(brandColorFilteredDtos, Messages.ProductListed);
+
+        }
+    
+
+
         /* ----------------------BUSINESS RULES-------------------------------*/
 
 

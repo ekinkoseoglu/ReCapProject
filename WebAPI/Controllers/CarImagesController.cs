@@ -32,9 +32,9 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("getbycarid")]
-        public IActionResult Get(int CarId)
+        public IActionResult Get(int Id)
         {
-            var result = _carImageService.GetByCarId(CarId);
+            var result = _carImageService.GetByCarId(Id);
             if (result.Success)
             {
                 return Ok(result);
@@ -43,6 +43,17 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
+        [HttpGet("getbycardtoid")]
+        public IActionResult GetByDtoId(int Id)
+        {
+            var result = _carImageService.GetByCarDtoId(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result.Message);
+        }
 
 
         [HttpPost("add")]

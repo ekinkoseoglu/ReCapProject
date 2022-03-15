@@ -94,6 +94,14 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), "Rental Listed");
         }
 
+      
+
+
+        public IDataResult<Rental> GetByCarId(int id)
+        {
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.CarId == id));
+        }
+
         public IDataResult<List<RentalDto>> GetRentalDetails()
         {
             if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 1)

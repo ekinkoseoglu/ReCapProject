@@ -17,6 +17,7 @@ namespace Business.Abstract
         IResult Update(Rental entity);
         IDataResult<Rental> Get(int id);
         IDataResult<List<Rental>> GetAll();
+        IDataResult<Rental> GetByCarId(int id);
         IDataResult<List<RentalDto>> GetRentalDetails();
     }
 }

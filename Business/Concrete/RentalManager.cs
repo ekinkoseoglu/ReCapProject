@@ -45,23 +45,16 @@ namespace Business.Concrete
         {
 
 
-            var addedRent = _rentalDal.Get(r => r.CarId == entity.CarId);
 
-            var rules = BusinessRules.Run(ControlRentDates(entity));
 
-            if (DateTime.Now.Hour >= 22 & DateTime.Now.Hour <= 7)
+            var rules = BusinessRules.Run(ControlRentDates(entity),ControlCarForRenT(entity));
+
+            if (rules!=null)
             {
-                return new ErrorResult(Messages.MaintenanceTime);
+                return new ErrorResult(rules.Message);
             }
-            else if (addedRent == null)
-            {
-                _rentalDal.Add(entity);
-                return new SuccessResult("Araba Kiralandı");
-            }
-            else
-            {
-                return new ErrorResult("Araba Zaten Kullanımda");
-            }
+            _rentalDal.Add(entity);
+            return new SuccessResult("Araba Kiralandı");
 
         }
 
@@ -72,6 +65,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.MaintenanceTime);
             }
+
             _rentalDal.Update(entity);
             return new SuccessResult("Rental Updated");
         }
@@ -95,7 +89,7 @@ namespace Business.Concrete
         [CacheAspect()]
         public IDataResult<List<Rental>> GetAll()
         {
-            
+
 
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(), "Rental Listed");
         }
@@ -115,7 +109,7 @@ namespace Business.Concrete
         [TransactionAspect]
         public IResult ControlRentDates(Rental rental)
         {
-            var rentForControl = _rentalDal.Get(r=>r.Id == rental.Id);
+            var rentForControl = _rentalDal.Get(r => r.Id == rental.Id);
             int result = DateTime.Compare(rental.RentDate, rental.ReturnDate);
             if (result > 0)
             {
@@ -126,17 +120,34 @@ namespace Business.Concrete
                 return new SuccessResult();
             }
         }
+
+        [TransactionAspect]
+        public IResult ControlCarForRenT(Rental rental)
+        {
+
+            var addedRent = _rentalDal.Get(r => r.CarId == rental.CarId);
+            if (addedRent == null)
+            {
+                return new SuccessResult();
+            }
+
+            else
+            {
+                return new ErrorResult("Araba Zaten Kullanımda");
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
-
-
-
-    
-
-
-
-    
-
-
-
 }
 

@@ -47,6 +47,9 @@ namespace DataAccess.Concrete.EntityFramework
                     join col in context.Colours
                         on c.ColorId equals col.Id
 
+                  
+                
+
                    
                     select new CarDto
                     {

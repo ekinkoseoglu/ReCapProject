@@ -15,6 +15,10 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+
+            //      BUSINESS's SERVICE INJECTIONS 
+
+
             builder.RegisterType<CarManager>().As<ICarService>().SingleInstance();
             builder.RegisterType<EfCarDal>().As<ICarDal>().SingleInstance();
 
@@ -33,13 +37,22 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
 
-            builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
-            builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
-
-
+            builder.RegisterType<CreditCardManager>().As<ICreditCardService>().SingleInstance();
+            builder.RegisterType<EfCreditardDal>().As<ICreditCardDal>().SingleInstance();
 
             builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
             builder.RegisterType<EfCarImageDal>().As<ICarImageDal>().SingleInstance();
+
+
+
+
+
+
+             //  HELPER INJECTIONS
+
+            builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
+             
 
             builder.RegisterType<FileHelper>().As<IFileHelper>().SingleInstance();
 

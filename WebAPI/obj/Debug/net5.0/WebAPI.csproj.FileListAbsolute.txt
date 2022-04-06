@@ -214,3 +214,4 @@ C:\Users\ekind\Desktop\Codes\C#\ReCapProject\WebAPI\obj\Debug\net5.0\WebAPI.dll
 C:\Users\ekind\Desktop\Codes\C#\ReCapProject\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
 C:\Users\ekind\Desktop\Codes\C#\ReCapProject\WebAPI\obj\Debug\net5.0\WebAPI.pdb
 C:\Users\ekind\Desktop\Codes\C#\ReCapProject\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
+C:\Users\ekind\Desktop\Codes\C#\ReCapProject\WebAPI\bin\Debug\net5.0\Newtonsoft.Json.dll

@@ -106,14 +106,19 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductAdded);
 
         }
+
+
+
         [CacheRemoveAspect("ICarService.Get")]
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car entity)
         {
-            if (DateTime.Now.Hour > 22 && DateTime.Now.Hour < 9)
-            {
-                return new ErrorResult(Messages.MaintenanceTime);
-            }
+          
+
+           
+
             _carDal.Update(entity);
+
             return new SuccessResult(Messages.ProductUpdated);
         }
 

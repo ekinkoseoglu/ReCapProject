@@ -80,8 +80,9 @@ namespace WebAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
             }
 
+            app.UseCustomException();
             app.UseCors(
-                builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader()); // Allow all this request that coming from this domain
+                builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()); // Allow all this request that coming from this domain
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

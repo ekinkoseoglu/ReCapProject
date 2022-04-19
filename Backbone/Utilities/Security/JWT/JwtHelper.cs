@@ -45,7 +45,7 @@ namespace Backbone.Utilities.Security.JWT
         public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, User user,
             SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
         {
-            var jwt = new JwtSecurityToken( // https://docs.microsoft.com/en-us/dotnet/api/system.identitymodel.tokens.jwt.jwtsecuritytoken.-ctor?view=azure-dotnet#System_IdentityModel_Tokens_Jwt_JwtSecurityToken__ctor_System_String_System_String_System_Collections_Generic_IEnumerable_System_Security_Claims_Claim__System_Nullable_System_DateTime__System_Nullable_System_DateTime__Microsoft_IdentityModel_Tokens_SigningCredentials_
+            var jwt = new JwtSecurityToken(
                 issuer: tokenOptions.Issuer,
                 audience: tokenOptions.Audience,
                 expires: _accessTokenExpiration,
